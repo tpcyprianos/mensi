@@ -311,7 +311,7 @@ export function RegisterForm() {
                 <label htmlFor="password" className="flex items-center text-sm font-medium text-gray-700 mb-2">
                   Senha <span className="text-red-500">*</span>
                   <div className="relative ml-2">
-                    <button
+                   {/* <button
                       className="m-0"
                       type="button"
                       onMouseEnter={() => setShowPasswordTooltip(true)}
@@ -323,6 +323,18 @@ export function RegisterForm() {
                     >
                       <HelpCircle size={16} />
                     </button>
+                    */}
+
+                    <HelpCircle
+                      size={16}
+                      role="button"
+                      tabIndex={0}
+                      onMouseEnter={() => setShowPasswordTooltip(true)}
+                      onMouseLeave={() => setShowPasswordTooltip(false)}
+                      onFocus={() => setShowPasswordTooltip(true)}
+                      onBlur={() => setShowPasswordTooltip(false)}
+                      className="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-800 rounded-full ml-1 align-text-top cursor-pointer"
+                    />
 
                     {/* Tooltip */}
                     {showPasswordTooltip && (
@@ -381,7 +393,7 @@ export function RegisterForm() {
                     <label htmlFor="guardianEmail" className="flex items-center text-sm font-medium text-gray-700 mb-2">
                       E-mail do responsável <span className="text-red-500">*</span>
                       <div className="relative ml-2">
-                        <button
+                        {/*<button
                           className="m-0"
                           type="button"
                           onMouseEnter={() => setShowGuardianTooltip(true)}
@@ -393,6 +405,18 @@ export function RegisterForm() {
                         >
                           <HelpCircle size={16} />
                         </button>
+                        */}
+
+                        <HelpCircle
+                          size={16}
+                          role="button"
+                          tabIndex={0}
+                          onMouseEnter={() => setShowGuardianTooltip(true)}
+                          onMouseLeave={() => setShowGuardianTooltip(false)}
+                          onFocus={() => setShowGuardianTooltip(true)}
+                          onBlur={() => setShowGuardianTooltip(false)}
+                          className="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-800 rounded-full ml-1 align-text-top cursor-pointer"
+                        />
 
                         {/* Tooltip */}
                         {showGuardianTooltip && (
