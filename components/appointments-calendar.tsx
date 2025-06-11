@@ -225,7 +225,7 @@ export function AppointmentsCalendar() {
                                   {appointment.tutorName} às {appointment.time.substring(0, 5)}h
                                 </div>
                                 <button
-                                  className="text-cyan-800 text-xs hover:underline focus:outline-none focus:underline"
+                                  className="text-cyan-800 text-sm hover:underline focus:outline-none focus:underline"
                                   onClick={(e) => {
                                     e.stopPropagation()
                                     openAppointmentDetails(appointment)

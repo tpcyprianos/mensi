@@ -153,7 +153,7 @@ export function ProfileContent() {
             <h1 className="text-2xl font-bold text-gray-800">Adenilson, bem vindo!</h1>
             <Link
               href="/profile/avatar"
-              className="text-cyan-800 hover:text-cyan-900 text-sm focus:outline-none focus:underline"
+              className="text-cyan-800 hover:text-cyan-900 text-base focus:outline-none focus:underline"
             >
               Gerenciar avatar
             </Link>
@@ -180,7 +180,7 @@ export function ProfileContent() {
       </div>
 
       {/* Controles para expandir/recolher todos os painéis */}
-      <div className="flex justify-center gap-4 mb-6">
+      <div className="flex justify-center gap-4 mb-6 text-base">
         <button
           onClick={expandAllSections}
           className="text-cyan-800 hover:text-cyan-900 focus:outline-none focus:underline"
