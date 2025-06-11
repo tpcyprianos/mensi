@@ -178,7 +178,7 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
           {/* Campo de mensagem */}
           <div className="mb-8">
             <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-              Mensagem para a tutora <span className="text-red-500">*</span>
+              Mensagem para a tutora <span className="text-red-500">*</span> campo com preenchimento obrigatório
             </label>
             <textarea
               id="message"

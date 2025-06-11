@@ -90,14 +90,14 @@ export function AccessibilityMenu() {
               Ir para rodapé [3]
             </Link>
           </li>
-          <li>
+          {/*<li>
             <Link
               href="#acessibilidade"
               className="hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-700"
             >
               Ir à acessibilidade [4]
             </Link>
-          </li>
+          </li>*/}
         </ul>
 
         <div className="flex items-center space-x-4">
