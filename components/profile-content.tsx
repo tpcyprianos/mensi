@@ -189,6 +189,7 @@ export function ProfileContent() {
         <a
           onClick={expandAllSections}
           className="text-cyan-800 hover:text-cyan-900 focus:outline-none focus:underline"
+          role="button"
           tabIndex={2}
         >
           Abrir todos os painéis
@@ -197,6 +198,7 @@ export function ProfileContent() {
         <a
           onClick={collapseAllSections}
           className="text-cyan-800 hover:text-cyan-900 focus:outline-none focus:underline"
+          role="button"
           tabIndex={2}
         >
           Ocultar todos os painéis

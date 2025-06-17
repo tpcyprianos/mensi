@@ -143,7 +143,7 @@ export function AchievementsGrid() {
     <div className="space-y-8">
       {/* Seção de conquistas desbloqueadas */}
       <div>
-        <h2 className="text-xl font-semibold text-gray-800 mb-6">Conquistas Desbloqueadas</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mb-6" tabIndex={2}>Conquistas Desbloqueadas</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {unlockedAchievements.map((achievement) => (
             <AchievementCard
@@ -158,7 +158,7 @@ export function AchievementsGrid() {
       {/* Seção de conquistas em progresso */}
       {lockedAchievements.length > 0 && (
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-6">Em Progresso</h2>
+          <h2 className="text-xl font-semibold text-gray-800 mb-6" tabIndex={2}>Em Progresso</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {lockedAchievements.map((achievement) => (
               <AchievementCard
@@ -173,25 +173,25 @@ export function AchievementsGrid() {
 
       {/* Estatísticas gerais */}
       <div className="bg-white rounded-lg p-6 shadow-sm">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">Suas Estatísticas</h3>
+        <h3 className="text-lg font-semibold text-gray-800 mb-4" tabIndex={2}>Suas Estatísticas</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="text-center">
-            <div className="text-2xl font-bold text-cyan-800">{unlockedAchievements.length}</div>
-            <div className="text-sm text-gray-600">Conquistas Desbloqueadas</div>
+            <div className="text-2xl font-bold text-cyan-800" tabIndex={2}>{unlockedAchievements.length}</div>
+            <div className="text-sm text-gray-600" tabIndex={2}>Conquistas Desbloqueadas</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-amber-600">{lockedAchievements.length}</div>
-            <div className="text-sm text-gray-600">Em Progresso</div>
+            <div className="text-2xl font-bold text-amber-600" tabIndex={2}>{lockedAchievements.length}</div>
+            <div className="text-sm text-gray-600" tabIndex={2}>Em Progresso</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-purple-600">
+            <div className="text-2xl font-bold text-purple-600" tabIndex={2}>
               {Math.round((unlockedAchievements.length / achievementsData.length) * 100)}%
             </div>
-            <div className="text-sm text-gray-600">Progresso Total</div>
+            <div className="text-sm text-gray-600" tabIndex={2}>Progresso Total</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-green-600">10h+</div>
-            <div className="text-sm text-gray-600">Esta Semana</div>
+            <div className="text-2xl font-bold text-green-600" tabIndex={2}>10h+</div>
+            <div className="text-sm text-gray-600" tabIndex={2}>Esta Semana</div>
           </div>
         </div>
       </div>

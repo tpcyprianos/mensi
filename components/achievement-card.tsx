@@ -72,6 +72,7 @@ export function AchievementCard({ achievement, onClick }: AchievementCardProps) 
         }
       `}
       aria-label={`${achievement.title}: ${achievement.description}`}
+      tabIndex={2}
     >
       {/* Ícone da conquista */}
       <div className="flex justify-center mb-3">
@@ -91,6 +92,7 @@ export function AchievementCard({ achievement, onClick }: AchievementCardProps) 
         font-semibold text-sm text-center mb-1
         ${achievement.isUnlocked ? "text-gray-800" : "text-gray-500"}
       `}
+        tabIndex={2}
       >
         {achievement.title}
       </h3>
