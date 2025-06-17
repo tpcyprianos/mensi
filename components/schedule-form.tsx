@@ -230,18 +230,20 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
         className="max-w-md"
       >
         <div className="text-center">
-          <p className="text-gray-700 mb-6">Deseja realmente cancelar o agendamento?</p>
+          <p className="text-gray-700 mb-6" tabIndex={2}>Deseja realmente cancelar o agendamento?</p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={handleConfirmCancel}
               className="px-6 py-2 bg-rose-800 hover:bg-rose-900 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-rose-800 focus:ring-offset-2"
+              tabIndex={2}
             >
               Sim, cancelar
             </button>
             <button
               onClick={handleContinueScheduling}
               className="px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              tabIndex={2}
             >
               Continuar agendando
             </button>
@@ -259,7 +261,7 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
       >
         <div className="text-center">
           
-          <p className="text-gray-700 mb-6">
+          <p className="text-gray-700 mb-6" tabIndex={2}>
             Tem certeza que deseja enviar sua mensagem para o tutor?
           </p>
 
@@ -267,12 +269,14 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
             <button
               onClick={handleMessageConfirm}
               className="w-full px-6 py-3 bg-cyan-700 hover:bg-cyan-800 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+              tabIndex={2}
             >
               Sim
             </button>
             <button
               onClick={() => setShowMessageModal(false)}
               className="w-full px-6 py-3 bg-gray-500 hover:bg-gray-600 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              tabIndex={2}
             >
               Continuar editando
             </button>
@@ -293,18 +297,20 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
             <CheckCircle size={32} className="text-green-600" />
           </div>
 
-          <p className="text-gray-700 mb-6">Para onde deseja ir agora?</p>
+          <p className="text-gray-700 mb-6" tabIndex={2}>Para onde deseja ir agora?</p>
 
           <div className="flex flex-col gap-3">
             <button
               onClick={handleGoToAppointments}
               className="w-full px-6 py-3 bg-cyan-700 hover:bg-cyan-800 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+              tabIndex={2}
             >
               Ver meus agendamentos
             </button>
             <button
               onClick={handleGoToRepository}
               className="w-full px-6 py-3 bg-gray-500 hover:bg-gray-600 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              tabIndex={2}
             >
               Ir para repositório
             </button>
