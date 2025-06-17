@@ -24,7 +24,7 @@ const tutorsData: Tutor[] = [
     name: "MENSI IA",
     image: "/images/mensi-ai.png",
     description: "A imagem mostra uma letra 'M' maiúsculas e arredondada, de cor azul, encostado do lado direito da letra há um lápis grande e colorido, desenhado de forma divertida e humanizada. Esse lápis tem olhos grandes, um sorriso simpático e está usando uma borracha rosa no topo, como se fosse um chapéu. A ponta do lápis está apontada para baixo, como se estivesse escrevendo.",
-    title: "IA conversacional",
+    title: "Robô para bate-papo",
     institution: "OpenAI",
     subjects: ["Todas as disciplinas"],
     availability: "24 horas",
