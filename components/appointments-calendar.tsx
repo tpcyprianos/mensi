@@ -167,7 +167,7 @@ export function AppointmentsCalendar() {
   const getEventColor = (status: string) => {
     switch (status) {
       case "scheduled":
-        return "bg-blue-500"
+        return "bg-blue-800"
       case "completed":
         return "bg-green-500"
       case "canceled":
@@ -218,7 +218,7 @@ export function AppointmentsCalendar() {
         {/* Cabeçalho com dias da semana */}
         <div className="grid grid-cols-7 gap-1 mb-2">
           {weekDays.map((day, index) => (
-            <div key={index} className="p-2 text-center text-sm font-medium text-blue-600">
+            <div key={index} className="p-2 text-center text-sm font-medium text-blue-800">
               {day}
             </div>
           ))}
@@ -244,7 +244,7 @@ export function AppointmentsCalendar() {
                     {/* Número do dia */}
                     <div className="text-right mb-1">
                       {isToday ? (
-                        <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-medium ml-auto">
+                        <div className="w-6 h-6 text-white rounded-full flex items-center justify-center text-xs font-medium ml-auto bg-blue-800">
                           {day}
                         </div>
                       ) : (
@@ -299,7 +299,7 @@ export function AppointmentsCalendar() {
         <h3 className="font-medium text-gray-800 mb-2 text-sm">Legenda:</h3>
         <div className="flex flex-wrap gap-3 text-xs">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-blue-500 rounded"></div>
+            <div className="w-3 h-3 bg-blue-800 rounded"></div>
             <span>Agendado</span>
           </div>
           <div className="flex items-center gap-2">
