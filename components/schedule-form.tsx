@@ -172,7 +172,7 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
         <form onSubmit={handleSubmit} className="bg-white rounded-lg p-6 shadow-sm">
           {/* Instrução */}
           <p className="text-gray-700 mb-6" tabIndex={2}>
-            Escreva uma breve mensagem para a tutora {tutor.name} entender melhor qual é sua principal dificuldade.
+            Escreva uma breve mensagem para a tutora {tutor.name} entender melhor qual é sua principal dificuldade. Esse campo é de preenchimento obrigatório.
           </p>
 
           {/* Campo de mensagem */}
