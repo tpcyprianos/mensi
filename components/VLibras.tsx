@@ -105,7 +105,7 @@ export function VLibras({ forceOnload }: Props): JSX.Element {
 
     if (vLibrasButton) {
       // Torna o botão acessível por teclado
-      vLibrasButton.setAttribute("tabindex", "0");
+      vLibrasButton.setAttribute("tabindex", "1");
       vLibrasButton.setAttribute("role", "button");
       vLibrasButton.setAttribute(
         "aria-label",
