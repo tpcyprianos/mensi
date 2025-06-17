@@ -12,6 +12,7 @@ export function LoginHeader() {
             width={120}
             height={40}
             priority
+            tabIndex={2}
           />
         </Link>
       </div>

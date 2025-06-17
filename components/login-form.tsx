@@ -114,6 +114,7 @@ export function LoginForm() {
               height={400}
               priority
               className="max-w-full h-auto"
+              tabIndex={2}
             />
           </div>
         </div>
@@ -123,15 +124,15 @@ export function LoginForm() {
           <div className="bg-white rounded-lg shadow-lg p-8">
             {/* Cabeçalho do formulário */}
             <div className="mb-8">
-              <h1 className="text-3xl font-bold text-gray-800 mb-2">Entrar</h1>
-              <p className="text-gray-600">Digite seus dados de acesso nos campos abaixo.</p>
+              <h1 className="text-3xl font-bold text-gray-800 mb-2" tabIndex={2}>Entrar</h1>
+              <p className="text-gray-600" tabIndex={2}>Digite seus dados de acesso nos campos abaixo.</p>
             </div>
 
             {/* Formulário */}
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Campo E-mail */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2" tabIndex={2}>
                   E-mail
                 </label>
                 <input
@@ -145,6 +146,7 @@ export function LoginForm() {
                     errors.email ? "border-red-500" : "border-gray-300"
                   }`}
                   aria-describedby={errors.email ? "email-error" : undefined}
+                  tabIndex={2}
                 />
                 {errors.email && (
                   <p id="email-error" className="mt-1 text-sm text-red-600" role="alert">
@@ -155,7 +157,7 @@ export function LoginForm() {
 
               {/* Campo Senha */}
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2" tabIndex={2}>
                   Senha
                 </label>
                 <div className="relative">
@@ -170,12 +172,14 @@ export function LoginForm() {
                       errors.password ? "border-red-500" : "border-gray-300"
                     }`}
                     aria-describedby={errors.password ? "password-error" : undefined}
+                    tabIndex={2}
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
                     aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
+                    tabIndex={2}
                   >
                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
@@ -192,6 +196,7 @@ export function LoginForm() {
                 <Link
                   href="/forgot-password"
                   className="text-sm text-cyan-800 hover:text-cyan-900 focus:outline-none focus:underline"
+                  tabIndex={2}
                 >
                   Esqueceu a senha?
                 </Link>
@@ -202,16 +207,18 @@ export function LoginForm() {
                 type="submit"
                 disabled={isLoading}
                 className="w-full bg-cyan-700 hover:bg-cyan-800 disabled:bg-cyan-500 text-white py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+                tabIndex={2}
               >
                 {isLoading ? "Entrando..." : "Entrar"}
               </button>
 
               {/* Link para cadastro */}
-              <div className="text-center">
+              <div className="text-center" tabIndex={2}>
                 <span className="text-gray-600">Não possui uma conta? </span>
                 <Link
                   href="/register"
                   className="text-cyan-800 hover:text-cyan-900 font-medium focus:outline-none focus:underline"
+                  tabIndex={2}
                 >
                   Cadastre-se
                 </Link>
@@ -232,6 +239,7 @@ export function LoginForm() {
                 type="button"
                 onClick={handleGoogleLogin}
                 className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                tabIndex={2}
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path

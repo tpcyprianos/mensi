@@ -134,6 +134,7 @@ export function ProfileContent() {
                 width={64}
                 height={64}
                 className="w-full h-full object-cover"
+                tabIndex={2}
               />
             </div>
             {/* Complemento sobreposto */}
@@ -145,6 +146,7 @@ export function ProfileContent() {
                   width={24}
                   height={24}
                   className="w-full h-full object-contain"
+                  tabIndex={2}
                 />
               </div>
             )}
@@ -154,6 +156,7 @@ export function ProfileContent() {
             <Link
               href="/profile/avatar"
               className="text-cyan-800 hover:text-cyan-900 text-base focus:outline-none focus:underline"
+              tabIndex={2}
             >
               Gerenciar avatar
             </Link>
@@ -165,6 +168,7 @@ export function ProfileContent() {
           <Link
             href="/profile/appointments"
             className="flex items-center gap-2 bg-cyan-700 hover:bg-cyan-800 text-white px-4 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+            tabIndex={2}
           >
             <Calendar size={18} />
             Meus agendamentos
@@ -172,6 +176,7 @@ export function ProfileContent() {
           <Link
             href="/profile/achievements"
             className="flex items-center gap-2 bg-cyan-700 hover:bg-cyan-800 text-white px-4 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+            tabIndex={2}
           >
             <Award size={18} />
             Minhas conquistas
@@ -180,17 +185,19 @@ export function ProfileContent() {
       </div>
 
       {/* Controles para expandir/recolher todos os painéis */}
-      <div className="flex justify-center gap-4 mb-6 text-base">
+      <div className="flex justify-center items-center gap-4 mb-6 text-base">
         <button
           onClick={expandAllSections}
           className="text-cyan-800 hover:text-cyan-900 focus:outline-none focus:underline"
+          tabIndex={2}
         >
           Abrir todos os painéis
         </button>
-        <span className="text-gray-400">|</span>
+        <span className="text-gray-400 select-none">|</span>
         <button
           onClick={collapseAllSections}
           className="text-cyan-800 hover:text-cyan-900 focus:outline-none focus:underline"
+          tabIndex={2}
         >
           Ocultar todos os painéis
         </button>

@@ -18,6 +18,7 @@ export function MainNavigation() {
             width={120} 
             height={40} 
             priority 
+            tabIndex={1}
           />
         </Link>
 
@@ -28,6 +29,7 @@ export function MainNavigation() {
               <Link
                 href="#sobre-nos"
                 className="text-gray-800 hover:text-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-700"
+                tabIndex={1}
               >
                 Sobre Nós
               </Link>
@@ -36,6 +38,7 @@ export function MainNavigation() {
               <Link
                 href="#recomendacoes"
                 className="text-gray-800 hover:text-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-700"
+                tabIndex={1}
               >
                 Recomendações
               </Link>
@@ -44,6 +47,7 @@ export function MainNavigation() {
               <Link
                 href="#tutores"
                 className="text-gray-800 hover:text-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-700"
+                tabIndex={1}
               >
                 Nossos Tutores
               </Link>
@@ -52,6 +56,7 @@ export function MainNavigation() {
               <Link
                 href="#contato"
                 className="text-gray-800 hover:text-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-700"
+                tabIndex={1}
               >
                 Fale Conosco
               </Link>
@@ -63,12 +68,14 @@ export function MainNavigation() {
           <Link
             href="/login"
             className="border-2 border-cyan-700 bg-transparent text-cyan-700 hover:border-cyan-800 hover:bg-cyan-800 hover:text-white px-6 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+            tabIndex={1}
           >
             Entrar
           </Link>
           <Link
             href="/register"
             className="bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+            tabIndex={1}
           >
             Criar Conta
           </Link>
@@ -80,6 +87,7 @@ export function MainNavigation() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+          tabIndex={1}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -95,6 +103,7 @@ export function MainNavigation() {
                   href="#sobre-nos"
                   className="block text-gray-800 hover:text-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-700"
                   onClick={() => setIsMenuOpen(false)}
+                  tabIndex={1}
                 >
                   Sobre Nós
                 </Link>
@@ -104,6 +113,7 @@ export function MainNavigation() {
                   href="#recomendacoes"
                   className="block text-gray-800 hover:text-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-700"
                   onClick={() => setIsMenuOpen(false)}
+                  tabIndex={1}
                 >
                   Recomendações
                 </Link>
@@ -113,6 +123,7 @@ export function MainNavigation() {
                   href="#tutores"
                   className="block text-gray-800 hover:text-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-700"
                   onClick={() => setIsMenuOpen(false)}
+                  tabIndex={1}
                 >
                   Nossos Tutores
                 </Link>
@@ -122,6 +133,7 @@ export function MainNavigation() {
                   href="#contato"
                   className="block text-gray-800 hover:text-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-700"
                   onClick={() => setIsMenuOpen(false)}
+                  tabIndex={1}
                 >
                   Fale Conosco
                 </Link>
@@ -131,6 +143,7 @@ export function MainNavigation() {
                   href="/login"
                   className="block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md text-center focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
                   onClick={() => setIsMenuOpen(false)}
+                  tabIndex={1}
                 >
                   Entrar
                 </Link>
@@ -140,6 +153,7 @@ export function MainNavigation() {
                   href="/register"
                   className="block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md text-center focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
                   onClick={() => setIsMenuOpen(false)}
+                  tabIndex={1}
                 >
                   Criar Conta
                 </Link>

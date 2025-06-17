@@ -60,6 +60,7 @@ export function AccessibilityMenu() {
                 document.getElementById("conteudo")?.focus()
                 document.getElementById("conteudo")?.scrollIntoView({ behavior: "smooth" })
               }}
+              tabIndex={1}
             >
               Ir para conteúdo [1]
             </Link>
@@ -73,6 +74,7 @@ export function AccessibilityMenu() {
                 document.getElementById("menu")?.focus()
                 document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })
               }}
+              tabIndex={1}
             >
               Ir para menu [2]
             </Link>
@@ -86,6 +88,7 @@ export function AccessibilityMenu() {
                 document.getElementById("rodape")?.focus()
                 document.getElementById("rodape")?.scrollIntoView({ behavior: "smooth" })
               }}
+              tabIndex={1}
             >
               Ir para rodapé [3]
             </Link>
@@ -105,6 +108,7 @@ export function AccessibilityMenu() {
             onClick={increaseFontSize}
             aria-label="Aumentar tamanho da fonte"
             className="focus:outline-none focus:ring-2 focus:ring-cyan-700"
+            tabIndex={1}
           >
             A+ <span className="sr-only">Aumentar tamanho da fonte</span>
           </button>
@@ -112,6 +116,7 @@ export function AccessibilityMenu() {
             onClick={decreaseFontSize}
             aria-label="Diminuir tamanho da fonte"
             className="focus:outline-none focus:ring-2 focus:ring-cyan-700"
+            tabIndex={1}
           >
             A- <span className="sr-only">Diminuir tamanho da fonte</span>
           </button>
@@ -119,6 +124,7 @@ export function AccessibilityMenu() {
             onClick={toggleHighContrast}
             aria-label="Alternar alto contraste"
             className="focus:outline-none focus:ring-2 focus:ring-cyan-700"
+            tabIndex={1}
           >
             Alto contraste
           </button>

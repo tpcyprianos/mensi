@@ -20,6 +20,7 @@ export function ExpandableSection({ title, isExpanded, onToggle, children }: Exp
         className="w-full bg-orange-300 hover:bg-orange-400 px-6 py-4 flex justify-between items-center transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-inset"
         aria-expanded={isExpanded}
         aria-controls={`section-${title.replace(/\s+/g, "-").toLowerCase()}`}
+        tabIndex={2}
       >
         <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
         <div className="flex items-center">

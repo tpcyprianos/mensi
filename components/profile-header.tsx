@@ -51,6 +51,7 @@ export function ProfileHeader({ activeItem }: ProfileHeaderProps) {
               width={120}
               height={40}
               priority
+              tabIndex={1}
             />
             
           </div>
@@ -64,6 +65,7 @@ export function ProfileHeader({ activeItem }: ProfileHeaderProps) {
                   className={`flex items-center gap-2 ${
                     isActive("perfil") ? "text-cyan-800 font-medium" : "text-gray-800 hover:text-cyan-800"
                   } focus:outline-none focus:ring-2 focus:ring-cyan-700`}
+                  tabIndex={1}
                 >
                   <User size={20} />
                   Perfil
@@ -75,6 +77,7 @@ export function ProfileHeader({ activeItem }: ProfileHeaderProps) {
                   className={`flex items-center gap-2 ${
                     isActive("tutores") ? "text-cyan-800 font-medium" : "text-gray-800 hover:text-cyan-800"
                   } focus:outline-none focus:ring-2 focus:ring-cyan-700`}
+                  tabIndex={1}
                 >
                   <GraduationCap size={20} />
                   Tutores
@@ -86,6 +89,7 @@ export function ProfileHeader({ activeItem }: ProfileHeaderProps) {
                   className={`flex items-center gap-2 ${
                     isActive("comunidade") ? "text-cyan-800 font-medium" : "text-gray-800 hover:text-cyan-800"
                   } focus:outline-none focus:ring-2 focus:ring-cyan-700`}
+                  tabIndex={1}
                 >
                   <Users size={20} />
                   Comunidade
@@ -97,6 +101,7 @@ export function ProfileHeader({ activeItem }: ProfileHeaderProps) {
                   className={`flex items-center gap-2 ${
                     isActive("repositorio") ? "text-cyan-800 font-medium" : "text-gray-800 hover:text-cyan-800"
                   } focus:outline-none focus:ring-2 focus:ring-cyan-700`}
+                  tabIndex={1}
                 >
                   <BookOpen size={20} />
                   Repositório
@@ -108,6 +113,7 @@ export function ProfileHeader({ activeItem }: ProfileHeaderProps) {
                   className={`flex items-center gap-2 ${
                     isActive("mensagens") ? "text-cyan-800 font-medium" : "text-gray-800 hover:text-cyan-800"
                   } focus:outline-none focus:ring-2 focus:ring-cyan-700`}
+                  tabIndex={1}
                 >
                   <MessageSquare size={20} />
                   Mensagens
@@ -123,6 +129,9 @@ export function ProfileHeader({ activeItem }: ProfileHeaderProps) {
               className="flex items-center gap-2 text-gray-800 hover:text-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-700"
               aria-expanded={isAccountMenuOpen}
               aria-haspopup="true"
+              aria-controls="dropdown-menu" 
+              aria-label="Abrir menu de usuário"
+              tabIndex={1}
             >
               <User size={20} />
               Minha conta
@@ -136,12 +145,16 @@ export function ProfileHeader({ activeItem }: ProfileHeaderProps) {
                   <Link
                     href="/profile/settings"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+                    role="menuitem"
+                    tabIndex={1}
                   >
                     Configurações
                   </Link>
                   <Link
                     href="/profile/achievements"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+                    role="menuitem"
+                    tabIndex={1}
                   >
                     Conquistas
                   </Link>
@@ -149,6 +162,8 @@ export function ProfileHeader({ activeItem }: ProfileHeaderProps) {
                   <Link
                     href="/"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+                    role="menuitem"
+                    tabIndex={1}
                   >
                     Sair
                   </Link>

@@ -46,9 +46,9 @@ export function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-1/2">
-            <h2 className="text-3xl font-bold mb-6">Fale conosco</h2>
+            <h2 className="text-3xl font-bold mb-6" tabIndex={2}>Fale conosco</h2>
 
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 mb-6" tabIndex={2}>
               Sinta-se livre para nos enviar uma mensagem pelo formulário ao lado ou nos escreva um e-mail. Retornaremos
               o mais breve possível.
             </p>
@@ -56,12 +56,12 @@ export function ContactSection() {
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
                 <Mail className="text-cyan-700" size={20} />
-                <span>contato@mensi.com</span>
+                <span tabIndex={2}>contato@mensi.com</span>
               </div>
 
               <div className="flex items-start gap-3">
                 <MapPin className="text-cyan-700" size={20} />
-                <span>
+                <span tabIndex={2}>
                   Rua Intendente Humberto Campedelli, 1000
                   <br />
                   Universidade, São Carlos/SP
@@ -88,7 +88,7 @@ export function ContactSection() {
               )}
 
               <div className="mb-4">
-                <label htmlFor="name" className="block mb-2 text-sm font-medium">
+                <label htmlFor="name" className="block mb-2 text-sm font-medium" tabIndex={2}>
                   Nome*
                 </label>
                 <input
@@ -100,11 +100,12 @@ export function ContactSection() {
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
                   placeholder="Digite seu nome"
+                  tabIndex={2}
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="phone" className="block mb-2 text-sm font-medium">
+                <label htmlFor="phone" className="block mb-2 text-sm font-medium" tabIndex={2}>
                   Telefone*
                 </label>
                 <input
@@ -116,11 +117,12 @@ export function ContactSection() {
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
                   placeholder="Digite seu telefone"
+                  tabIndex={2}
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="email" className="block mb-2 text-sm font-medium">
+                <label htmlFor="email" className="block mb-2 text-sm font-medium" tabIndex={2}>
                   E-mail*
                 </label>
                 <input
@@ -132,11 +134,12 @@ export function ContactSection() {
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
                   placeholder="Digite seu e-mail"
+                  tabIndex={2}
                 />
               </div>
 
               <div className="mb-6">
-                <label htmlFor="message" className="block mb-2 text-sm font-medium">
+                <label htmlFor="message" className="block mb-2 text-sm font-medium" tabIndex={2}>
                   Mensagem*
                 </label>
                 <textarea
@@ -148,12 +151,14 @@ export function ContactSection() {
                   rows={5}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-700"
                   placeholder="Descreva como podemos te ajudar"
+                  tabIndex={2}
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 className="w-full bg-cyan-700 hover:bg-cyan-800 text-white py-3 rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+                tabIndex={2}
               >
                 Enviar mensagem
               </button>

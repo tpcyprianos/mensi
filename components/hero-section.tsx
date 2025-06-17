@@ -13,25 +13,26 @@ export function HeroSection() {
               width={300}
               height={300}
               priority
+              tabIndex={2}
             />
           </div>
 
           <div className="md:w-2/3 space-y-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800" tabIndex={2}>
               Mensi é a plataforma que vai te ajudar a aprender de verdade!
             </h1>
 
             <div className="space-y-4">
-              <p className="text-gray-700">
+              <p className="text-gray-700" tabIndex={2}>
                 Está com dificuldade em alguma matéria? Aqui você encontra tutores dedicados prontos para te ajudar a
                 entender de vez o conteúdo, no seu ritmo e do seu jeito.
               </p>
 
-              <p className="text-gray-700">
+              <p className="text-gray-700" tabIndex={2}>
                 Conectamos você com quem sabe ensinar de forma simples, prática e personalizada.
               </p>
 
-              <p className="text-gray-700">
+              <p className="text-gray-700" tabIndex={2}>
                 Nossa plataforma conta com um repositório de conteúdo que irá te ajudar a estudar em qualquer hora!
               </p>
             </div>
@@ -40,6 +41,7 @@ export function HeroSection() {
               <Link
                 href="/login"
                 className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-8 py-3 rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+                tabIndex={2}
               >
                 Começar agora
               </Link>
