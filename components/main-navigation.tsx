@@ -9,7 +9,7 @@ export function MainNavigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-sky-100 py-4" id="menu" tabIndex={-1}>
+    <header className="bg-sky-100 py-4 sticky top-0 z-50" id="menu" tabIndex={-1}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <Image 
