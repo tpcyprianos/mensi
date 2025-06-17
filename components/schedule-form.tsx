@@ -124,8 +124,8 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
     <>
       <div className="max-w-4xl mx-auto">
         {/* Título principal */}
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-          Agendamento tutoria para o dia {selectedDate} às {selectedTime} horas
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4" tabIndex={2}>
+          Agendamento para o dia {selectedDate} às {selectedTime} horas
         </h1>
 
         {/* Informações do tutor */}
@@ -135,17 +135,17 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
               {tutor.name.charAt(0)}
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-gray-800 flex items-center gap-2">
+              <h2 className="text-xl font-semibold text-gray-800 flex items-center gap-2" tabIndex={2}>
                 {tutor.name}
                 {tutor.verified && (
-                  <span className="inline-flex items-center gap-1 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
+                  <span className="inline-flex items-center gap-1 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full" tabIndex={2}>
                     <CheckCircle size={12} />
                     Tutora Verificada
                   </span>
                 )}
               </h2>
-              <p className="text-gray-600">{tutor.title}</p>
-              <p className="text-sm text-gray-500">
+              <p className="text-gray-600" tabIndex={2}>{tutor.title}</p>
+              <p className="text-sm text-gray-500" tabIndex={2}>
                 Tutora de {tutor.subjects.join(", ").replace(/, ([^,]*)$/, " e $1")}
               </p>
             </div>
@@ -155,15 +155,15 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
           <div className="flex flex-wrap gap-4 text-sm text-gray-600">
             <div className="flex items-center gap-2">
               <Calendar size={16} className="text-cyan-800" />
-              <span>{selectedDate}</span>
+              <span tabIndex={2}>{selectedDate}</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock size={16} className="text-cyan-800" />
-              <span>{selectedTime} horas</span>
+              <span tabIndex={2}>{selectedTime} horas</span>
             </div>
             <div className="flex items-center gap-2">
               <User size={16} className="text-cyan-800" />
-              <span>Sessão individual</span>
+              <span tabIndex={2}>Sessão individual</span>
             </div>
           </div>
         </div>
@@ -171,14 +171,14 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
         {/* Formulário de agendamento */}
         <form onSubmit={handleSubmit} className="bg-white rounded-lg p-6 shadow-sm">
           {/* Instrução */}
-          <p className="text-gray-700 mb-6">
-            Escreva uma breve mensagem para a tutora {tutor.name} entender melhor qual é sua principal dificuldade.
+          <p className="text-gray-700 mb-6" tabIndex={2}>
+            Escreva uma breve mensagem para a tutora {tutor.name} entender melhor qual é sua principal dificuldade. Esse campo é obrigatório.
           </p>
 
           {/* Campo de mensagem */}
           <div className="mb-8">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-              Mensagem para a tutora <span className="text-red-500">*</span> campo com preenchimento obrigatório
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2" tabIndex={2}>
+              Mensagem para a tutora <span className="text-red-500">*</span>
             </label>
             <textarea
               id="message"
@@ -191,9 +191,10 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
               }`}
               aria-describedby="message-help"
               required
+              tabIndex={2}
             />
             {messageError && <p className="mt-1 text-sm text-red-600">{messageError}</p>}
-            <p id="message-help" className="mt-2 text-sm text-gray-500">
+            <p id="message-help" className="mt-2 text-sm text-gray-500" tabIndex={2}>
               Descreva suas dificuldades para que a tutora possa se preparar melhor para a sessão.
             </p>
           </div>
@@ -205,6 +206,7 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
               onClick={handleCancel}
               className="px-8 py-3 bg-rose-800 hover:bg-rose-900 text-white rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-rose-800 focus:ring-offset-2"
               disabled={isLoading}
+              tabIndex={2}
             >
               Cancelar
             </button>
@@ -212,6 +214,7 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
             <button
               type="submit"
               className="px-8 py-3 bg-cyan-700 hover:bg-cyan-800 disabled:bg-cyan-500 text-white rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+              tabIndex={2}
             >
               {isLoading ? "Enviando..." : "Enviar"}
             </button>
