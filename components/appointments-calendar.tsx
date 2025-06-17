@@ -21,7 +21,7 @@ const mockAppointments: Appointment[] = [
     id: "apt-001",
     tutorId: "giovana-mattos",
     tutorName: "Giovana",
-    date: "2025-03-16",
+    date: "2025-06-16",
     time: "19:00",
     subject: "Matemática",
     status: "scheduled",
@@ -30,7 +30,7 @@ const mockAppointments: Appointment[] = [
     id: "apt-002",
     tutorId: "alberto-souza",
     tutorName: "Alberto",
-    date: "2025-03-22",
+    date: "2025-06-22",
     time: "10:00",
     subject: "Biologia",
     status: "scheduled",
@@ -39,32 +39,46 @@ const mockAppointments: Appointment[] = [
     id: "apt-003",
     tutorId: "giovana-mattos",
     tutorName: "Giovana",
-    date: "2025-04-05",
+    date: "2025-07-05",
     time: "14:30",
     subject: "Física",
+    status: "scheduled",
+  },
+  {
+    id: "apt-004",
+    tutorId: "alberto-souza",
+    tutorName: "Alberto",
+    date: "2025-05-15",
+    time: "16:00",
+    subject: "Química",
+    status: "completed",
+  },
+  {
+    id: "apt-005",
+    tutorId: "giovana-mattos",
+    tutorName: "Giovana",
+    date: "2025-08-10",
+    time: "09:00",
+    subject: "Matemática",
     status: "scheduled",
   },
 ]
 
 export function AppointmentsCalendar() {
-  // Estado para controlar o mês e ano atual
-  const [currentDate, setCurrentDate] = useState(new Date(2025, 2, 1)) // Março 2025 como no layout
+  // Estado para controlar o mês e ano atual - começando com o mês atual
+  const [currentDate, setCurrentDate] = useState(new Date())
   const [appointments, setAppointments] = useState<Appointment[]>([])
   const [selectedAppointment, setSelectedAppointment] = useState<Appointment | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // Efeito para carregar os agendamentos (simulando uma chamada de API)
+  // Efeito para carregar os agendamentos
   useEffect(() => {
-    // Em uma aplicação real, aqui seria feita uma chamada à API
-    // para buscar os agendamentos do mês atual
     const fetchAppointments = async () => {
       try {
-        // Simular um delay de API
         await new Promise((resolve) => setTimeout(resolve, 500))
 
-        // Filtrar apenas os agendamentos do mês atual
         const year = currentDate.getFullYear()
-        const month = currentDate.getMonth() + 1 // getMonth() retorna 0-11
+        const month = currentDate.getMonth() + 1
         const monthStr = month < 10 ? `0${month}` : `${month}`
 
         const filtered = mockAppointments.filter((apt) => {
@@ -121,17 +135,11 @@ export function AppointmentsCalendar() {
     const year = currentDate.getFullYear()
     const month = currentDate.getMonth()
 
-    // Primeiro dia do mês
     const firstDay = new Date(year, month, 1)
-    // Último dia do mês
     const lastDay = new Date(year, month + 1, 0)
-
-    // Dia da semana do primeiro dia (0 = Domingo, 1 = Segunda, etc.)
     const firstDayOfWeek = firstDay.getDay()
-    // Total de dias no mês
     const daysInMonth = lastDay.getDate()
 
-    // Array para armazenar os dias do calendário
     const calendarDays = []
 
     // Adicionar células vazias para os dias antes do primeiro dia do mês
@@ -155,105 +163,128 @@ export function AppointmentsCalendar() {
     return appointments.find((apt) => apt.date === dateStr) || null
   }
 
-  // Dias da semana
-  const weekDays = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"]
+  // Função para obter a cor do evento baseada no status
+  const getEventColor = (status: string) => {
+    switch (status) {
+      case "scheduled":
+        return "bg-blue-500"
+      case "completed":
+        return "bg-green-500"
+      case "canceled":
+        return "bg-red-500"
+      default:
+        return "bg-gray-500"
+    }
+  }
+
+  // Dias da semana abreviados
+  const weekDays = ["D", "S", "T", "Q", "Q", "S", "S"]
 
   // Gerar os dias do calendário
   const calendarDays = generateCalendarDays()
 
+  // Data de hoje para destacar
+  const today = new Date()
+  const isCurrentMonth =
+    today.getMonth() === currentDate.getMonth() && today.getFullYear() === currentDate.getFullYear()
+
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-      {/* Cabeçalho do calendário */}
+      {/* Cabeçalho do calendário com navegação */}
       <div className="bg-amber-300 p-4 flex items-center justify-between">
         <button
           onClick={goToPreviousMonth}
-          className="p-2 hover:bg-amber-400 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500"
+          className="p-2 hover:bg-amber-400 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500 transition-colors"
           aria-label="Mês anterior"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={20} className="text-gray-800" />
         </button>
-        <h2 className="text-xl font-bold text-gray-800">{formatMonthYear(currentDate)}</h2>
+
+        <h2 className="text-lg md:text-xl font-bold text-gray-800 text-center flex-1">
+          {formatMonthYear(currentDate)}
+        </h2>
+
         <button
           onClick={goToNextMonth}
-          className="p-2 hover:bg-amber-400 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500"
+          className="p-2 hover:bg-amber-400 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500 transition-colors"
           aria-label="Próximo mês"
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={20} className="text-gray-800" />
         </button>
       </div>
 
       {/* Calendário */}
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
-          {/* Cabeçalho com dias da semana */}
-          <thead>
-            <tr>
-              {weekDays.map((day, index) => (
-                <th key={index} className="p-4 text-center border text-cyan-800 font-medium">
-                  {day}
-                </th>
-              ))}
-            </tr>
-          </thead>
+      <div className="p-4">
+        {/* Cabeçalho com dias da semana */}
+        <div className="grid grid-cols-7 gap-1 mb-2">
+          {weekDays.map((day, index) => (
+            <div key={index} className="p-2 text-center text-sm font-medium text-blue-600">
+              {day}
+            </div>
+          ))}
+        </div>
 
-          {/* Corpo do calendário */}
-          <tbody>
-            {/* Dividir os dias em semanas (arrays de 7 dias) */}
-            {Array(Math.ceil(calendarDays.length / 7))
-              .fill(null)
-              .map((_, weekIndex) => (
-                <tr key={weekIndex}>
-                  {calendarDays.slice(weekIndex * 7, weekIndex * 7 + 7).map((day, dayIndex) => {
-                    const appointment = day ? getAppointmentForDay(day) : null
+        {/* Corpo do calendário */}
+        <div className="grid grid-cols-7 gap-1">
+          {calendarDays.map((day, index) => {
+            const appointment = day ? getAppointmentForDay(day) : null
+            const isToday = isCurrentMonth && day === today.getDate()
+            const isEmpty = !day
 
-                    return (
-                      <td key={dayIndex} className={`border p-2 h-24 align-top ${day ? "" : "bg-gray-50"}`}>
-                        {day && (
-                          <div className="h-full">
-                            {/* Número do dia */}
-                            <div className="text-right mb-1">
-                              <span className="text-cyan-800 font-medium">{day}</span>
-                            </div>
+            return (
+              <div
+                key={index}
+                className={`
+                  relative min-h-[60px] p-1 border border-gray-100
+                  ${isEmpty ? "bg-gray-50" : "bg-white hover:bg-gray-50"}
+                `}
+              >
+                {day && (
+                  <>
+                    {/* Número do dia */}
+                    <div className="text-right mb-1">
+                      {isToday ? (
+                        <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-medium ml-auto">
+                          {day}
+                        </div>
+                      ) : (
+                        <span className="text-sm font-medium text-gray-700">{day}</span>
+                      )}
+                    </div>
 
-                            {/* Agendamento (se houver) */}
-                            {appointment && (
-                              <div
-                                className="bg-sky-100 p-2 rounded text-sm cursor-pointer hover:bg-sky-200 transition-colors"
-                                onClick={() => openAppointmentDetails(appointment)}
-                              >
-                                <div className="font-medium">
-                                  {appointment.tutorName} às {appointment.time.substring(0, 5)}h
-                                </div>
-                                <button
-                                  className="text-cyan-800 text-sm hover:underline focus:outline-none focus:underline"
-                                  onClick={(e) => {
-                                    e.stopPropagation()
-                                    openAppointmentDetails(appointment)
-                                  }}
-                                >
-                                  Ver detalhes
-                                </button>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </td>
-                    )
-                  })}
-                </tr>
-              ))}
-          </tbody>
-        </table>
+                    {/* Agendamento (se houver) */}
+                    {appointment && (
+                      <button
+                        onClick={() => openAppointmentDetails(appointment)}
+                        className={`
+                          w-full text-left p-1 rounded text-xs text-white font-medium
+                          ${getEventColor(appointment.status)}
+                          hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500
+                        `}
+                        aria-label={`Agendamento com ${appointment.tutorName} às ${appointment.time}`}
+                      >
+                        <div className="truncate">{appointment.tutorName}</div>
+                        <div className="truncate text-xs opacity-90">{appointment.time.substring(0, 5)}</div>
+                      </button>
+                    )}
+                  </>
+                )}
+              </div>
+            )
+          })}
+        </div>
       </div>
 
       {/* Estado vazio (quando não há agendamentos) */}
       {appointments.length === 0 && (
-        <div className="p-8 text-center">
+        <div className="p-8 text-center border-t">
           <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <Calendar size={32} className="text-gray-400" />
           </div>
           <h3 className="text-lg font-medium text-gray-800 mb-2">Nenhum agendamento encontrado</h3>
-          <p className="text-gray-600 mb-4">Você não possui agendamentos para este mês. Que tal agendar uma tutoria?</p>
+          <p className="text-gray-600 mb-4 text-sm">
+            Você não possui agendamentos para {formatMonthYear(currentDate).toLowerCase()}. Que tal agendar uma tutoria?
+          </p>
           <a
             href="/tutors"
             className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
@@ -264,19 +295,19 @@ export function AppointmentsCalendar() {
       )}
 
       {/* Legenda do calendário */}
-      <div className="p-4 border-t">
-        <h3 className="font-medium text-gray-800 mb-2">Legenda:</h3>
-        <div className="flex flex-wrap gap-4 text-sm">
+      <div className="p-4 border-t bg-gray-50">
+        <h3 className="font-medium text-gray-800 mb-2 text-sm">Legenda:</h3>
+        <div className="flex flex-wrap gap-3 text-xs">
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-sky-100 rounded"></div>
-            <span>Agendamento marcado</span>
+            <div className="w-3 h-3 bg-blue-500 rounded"></div>
+            <span>Agendado</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-green-100 rounded"></div>
-            <span>Aula concluída</span>
+            <div className="w-3 h-3 bg-green-500 rounded"></div>
+            <span>Concluído</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-red-100 rounded"></div>
+            <div className="w-3 h-3 bg-red-500 rounded"></div>
             <span>Cancelado</span>
           </div>
         </div>
