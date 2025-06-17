@@ -26,7 +26,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
   const buttonText = tutor.isAI ? "Começar" : "Ver perfil"
 
   // Determinar a URL de destino com base no tipo de tutor - vai para um chat no GPT
-  const buttonHref = tutor.isAI ? "https://chatgpt.com/g/g-hRCqiqVlM-tutor-me" : `/tutors/${tutor.id}`
+  const buttonHref = tutor.isAI ? "https://chatgpt.com/g/g-68516666bb2c819197db421663e1323b-mensi-ai" : `/tutors/${tutor.id}`
 
   return (
     <div className={`${bgColor} rounded-lg overflow-hidden shadow-md`}>
