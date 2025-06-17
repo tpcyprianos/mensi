@@ -52,6 +52,10 @@ body.high-contrast a {
   text-decoration: none !important;
 }
 
+body.high-contrast .mt-6 a{
+  border: 2px solid #ffff00 !important;
+}
+
 body.high-contrast a:hover,
 body.high-contrast a:focus {
   color: #000000 !important;
@@ -120,6 +124,14 @@ body.high-contrast .text-cyan-700,
 body.high-contrast .text-blue-500 {
   color: #ffff00 !important;
 }
+
+/*Teste de borda*/
+body.high-contrast .bg-amber-300,
+body.high-contrast .bg-orange-500{
+  background-color: #000000 !important;
+  border: 2px solid #ffff00 !important;
+}
+
 
 /* Estilos para foco acessível */
 :focus-visible {
