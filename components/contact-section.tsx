@@ -75,6 +75,7 @@ export function ContactSection() {
                 alt="Uma mão com o dedo indicador apontado para cima está tocando uma tela com seis botões coloridos dispostos em duas fileiras de três. Cada botão tem um símbolo que representa uma reação ou ação" 
                 width={200} 
                 height={200} 
+                className="mx-auto"
               />
             </div>
           </div>

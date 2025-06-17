@@ -17,7 +17,7 @@ export function TestimonialsSection() {
               "A Mensi realmente fez a diferença na minha preparação para o vestibular. A qualidade, a variedade de
               cursos e a interação com os professores são pontos que realmente fazem a diferença no meu aprendizado."
             </div>
-            <div className="font-semibold" tabIndex={2}>— Lara, 18 anos</div>
+            <div className="font-semibold text-right" tabIndex={2}>— Lara, 18 anos</div>
           </div>
 
           {/* Depoimento 2 */}
@@ -26,7 +26,7 @@ export function TestimonialsSection() {
               "É incrível como a plataforma me ajudou nos estudos e a focar no que eu realmente precisava melhorar. Os
               tutores são atenciosos e explicam de um jeito simples e direto. Isso mudou o jogo!"
             </div>
-            <div className="font-semibold" tabIndex={2}>— Alex, 16 anos</div>
+            <div className="font-semibold text-right" tabIndex={2}>— Alex, 16 anos</div>
           </div>
 
           {/* Depoimento 3 */}
@@ -35,7 +35,7 @@ export function TestimonialsSection() {
               "Antes eu tinha muita dificuldade com matérias diferentes, mas com a plataforma consegui traçar um caminho
               claro. O suporte dos tutores foi crucial e fez toda a diferença na minha confiança e notas!"
             </div>
-            <div className="font-semibold" tabIndex={2}>— Adriana, 20 anos</div>
+            <div className="font-semibold text-right" tabIndex={2}>— Adriana, 20 anos</div>
           </div>
         </div>
       </div>
