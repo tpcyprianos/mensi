@@ -249,7 +249,7 @@ export function RegisterForm() {
                   tabIndex={2}
                 />
                 {errors.fullName && (
-                  <p id="fullName-error" className="mt-1 text-sm text-red-600" role="alert" tabIndex={errors.fullName ? 2 : -1}>
+                  <p id="fullName-error" className="mt-1 text-sm text-red-600" role="alert" tabIndex={2}>
                     {errors.fullName}
                   </p>
                 )}
@@ -331,7 +331,6 @@ export function RegisterForm() {
                     <HelpCircle
                       size={16}
                       role="button"
-                      tabIndex={2}
                       onMouseEnter={() => setShowPasswordTooltip(true)}
                       onMouseLeave={() => setShowPasswordTooltip(false)}
                       onFocus={() => setShowPasswordTooltip(true)}
@@ -376,7 +375,6 @@ export function RegisterForm() {
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
                     aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
-                    tabIndex={2}
                   >
                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
@@ -415,7 +413,6 @@ export function RegisterForm() {
                         <HelpCircle
                           size={16}
                           role="button"
-                          tabIndex={2}
                           onMouseEnter={() => setShowGuardianTooltip(true)}
                           onMouseLeave={() => setShowGuardianTooltip(false)}
                           onFocus={() => setShowGuardianTooltip(true)}
@@ -427,7 +424,7 @@ export function RegisterForm() {
                         {showGuardianTooltip && (
                           <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-64 bg-gray-800 text-white text-base rounded-lg p-3 z-10">
                             <div className="space-y-1">
-                              <p tabIndex={2}>
+                              <p>
                                 Para sua segurança, o seu responsável será solicitado por e-mail para autorizar algumas
                                 funcionalidades, como agendamento de tutorias.
                               </p>
@@ -452,7 +449,7 @@ export function RegisterForm() {
                       tabIndex={2}
                     />
                     {errors.guardianEmail && (
-                      <p id="guardianEmail-error" className="mt-1 text-sm text-red-600" role="alert" tabIndex={2}>
+                      <p id="guardianEmail-error" className="mt-1 text-sm text-red-600" role="alert">
                         {errors.guardianEmail}
                       </p>
                     )}
@@ -471,7 +468,7 @@ export function RegisterForm() {
 
               {/* Confirmação de senha */}
               <div className="flex flex-col">
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2" tabIndex={2}>
                   Confirmação da senha <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
@@ -499,7 +496,7 @@ export function RegisterForm() {
                   </button>
                 </div>
                 {errors.confirmPassword && (
-                  <p id="confirmPassword-error" className="mt-1 text-sm text-red-600" role="alert" tabIndex={2}>
+                  <p id="confirmPassword-error" className="mt-1 text-sm text-red-600" role="alert">
                     {errors.confirmPassword}
                   </p>
                 )}
