@@ -49,7 +49,7 @@ body.high-contrast th {
 body.high-contrast a {
   color: #ffff00 !important;
   border-color: #ffff00 !important;
-  text-decoration: underline !important;
+  text-decoration: none !important;
 }
 
 body.high-contrast a:hover,
