@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export function LoginHeader() {
   return (
-    <header className="bg-sky-100 py-4">
+    <header className="bg-sky-100 py-4 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <Link href="/" className="inline-block">
           <Image

@@ -39,7 +39,7 @@ export function ProfileHeader({ activeItem }: ProfileHeaderProps) {
   }
 
   return (
-    <header className="bg-sky-100 py-4">
+    <header className="bg-sky-100 py-4 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}

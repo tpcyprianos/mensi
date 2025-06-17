@@ -48,7 +48,7 @@ export function AccessibilityMenu() {
   }
 
   return (
-    <nav id="menu-acessibilidade" aria-label="Menu de acessibilidade" className="bg-gray-100 py-2 px-4 text-sm">
+    <nav id="menu-acessibilidade" aria-label="Menu de acessibilidade" className="bg-gray-100 py-2 px-4 text-sm sticky top-0 z-50">
       <div className="container mx-auto flex flex-wrap justify-between items-center">
         <ul className="flex space-x-4">
           <li>
