@@ -13,6 +13,64 @@ export function AccessibilityMenu() {
     setIsMounted(true)
   }, [])
 
+  //Alt + 1
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Verifica se Alt + 1 foi pressionado
+      if (e.altKey && e.key === '1') {
+        e.preventDefault()
+        const target = document.getElementById('conteudo')
+        if (target) {
+          target.focus()
+          target.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
+  //Alt + 2
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Verifica se Alt + 2 foi pressionado
+      if (e.altKey && e.key === '2') {
+        e.preventDefault()
+        const target = document.getElementById('menu')
+        if (target) {
+          target.focus()
+          target.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
+
+//Alt + 3
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Verifica se Alt + 3 foi pressionado
+      if (e.altKey && e.key === '3') {
+        e.preventDefault()
+        const target = document.getElementById('rodape')
+        if (target) {
+          target.focus()
+          target.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
   // Função para aumentar o tamanho da fonte
   const increaseFontSize = () => {
     if (fontSize < 24) {
