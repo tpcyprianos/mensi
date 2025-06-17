@@ -77,17 +77,17 @@ export function ContentCard({ content }: ContentCardProps) {
 
           {/* Informações do conteúdo */}
           <div className="flex-grow">
-            <h3 className="text-lg font-semibold text-gray-800 mb-1" tabIndex={2}>{content.title}</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-1">{content.title}</h3>
 
             {/* Metadados */}
             <div className="flex flex-wrap gap-2 text-sm text-gray-600 mb-2">
-              <span className="bg-white px-2 py-1 rounded-full" tabIndex={2}>{content.subject}</span>
-              <span className="bg-white px-2 py-1 rounded-full" tabIndex={2}>{content.grade}</span>
-              <span className="bg-white px-2 py-1 rounded-full" tabIndex={2}>{content.category}</span>
+              <span className="bg-white px-2 py-1 rounded-full">{content.subject}</span>
+              <span className="bg-white px-2 py-1 rounded-full">{content.grade}</span>
+              <span className="bg-white px-2 py-1 rounded-full">{content.category}</span>
             </div>
 
             {/* Descrição (se disponível) */}
-            {content.description && <p className="text-gray-700 text-sm" tabIndex={content.description ? 2 : -1}>{content.description}</p>}
+            {content.description && <p className="text-gray-700 text-sm">{content.description}</p>}
           </div>
         </div>
 
@@ -97,7 +97,6 @@ export function ContentCard({ content }: ContentCardProps) {
             onClick={handleDownload}
             className="bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2 flex items-center gap-2"
             aria-label={`${getButtonText()} ${content.title}`}
-            tabIndex={2}
           >
             {content.type === "video" ? <Play size={16} /> : <Download size={16} />}
             {getButtonText()}

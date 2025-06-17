@@ -167,11 +167,11 @@ export function TutorsSearch() {
       {/* Coluna de filtros */}
       <div className="lg:col-span-1">
         <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6" tabIndex={2}>Qual tutor está procurando?</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Qual tutor está procurando?</h2>
 
           {/* Filtro por disciplina ou conteúdo */}
           <div className="mb-6">
-            <label htmlFor="subject" className="block text-gray-700 font-medium mb-2" tabIndex={2}>
+            <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">
               Disciplina ou conteúdo:
             </label>
             <div className="relative">
@@ -181,7 +181,6 @@ export function TutorsSearch() {
                 onChange={(e) => setSubject(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-cyan-700 bg-white"
                 aria-label="Selecione uma disciplina"
-                tabIndex={2}
               >
                 <option value="">Selecione uma disciplina</option>
                 {availableSubjects.map((subj) => (
@@ -206,7 +205,7 @@ export function TutorsSearch() {
 
           {/* Filtro por nome do tutor */}
           <div className="mb-6">
-            <label htmlFor="tutorName" className="block text-gray-700 font-medium mb-2" tabIndex={2}>
+            <label htmlFor="tutorName" className="block text-gray-700 font-medium mb-2">
               Nome do tutor:
             </label>
             <div className="relative">
@@ -217,7 +216,6 @@ export function TutorsSearch() {
                 onChange={(e) => setTutorName(e.target.value)}
                 placeholder="Digite o nome do tutor"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-700"
-                tabIndex={2}
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                 <Search size={20} className="text-gray-400" />
@@ -229,7 +227,7 @@ export function TutorsSearch() {
 
           {/* Filtro por nível de ensino */}
           <div className="mb-6">
-            <label htmlFor="level" className="block text-gray-700 font-medium mb-2" tabIndex={2}>
+            <label htmlFor="level" className="block text-gray-700 font-medium mb-2">
               Nível de ensino:
             </label>
             <div className="relative">
@@ -239,7 +237,6 @@ export function TutorsSearch() {
                 onChange={(e) => setLevel(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-cyan-700 bg-white"
                 aria-label="Selecione um nível de ensino"
-                tabIndex={2}
               >
                 <option value="">Selecione um nível</option>
                 {educationLevels.map((lvl) => (
@@ -264,7 +261,7 @@ export function TutorsSearch() {
 
           {/* Filtro por horário disponível */}
           <div className="mb-6">
-            <label htmlFor="time" className="block text-gray-700 font-medium mb-2" tabIndex={2}>
+            <label htmlFor="time" className="block text-gray-700 font-medium mb-2">
               Horário disponível:
             </label>
             <div className="relative">
@@ -274,7 +271,6 @@ export function TutorsSearch() {
                 onChange={(e) => setTime(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-cyan-700 bg-white"
                 aria-label="Selecione um horário disponível"
-                tabIndex={2}
               >
                 <option value="">Selecione um horário</option>
                 {availableTimes.map((t) => (
@@ -300,7 +296,6 @@ export function TutorsSearch() {
             <button
               onClick={clearFilters}
               className="flex items-center gap-2 bg-rose-800 hover:bg-rose-900 text-white px-4 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-rose-800 focus:ring-offset-2"
-              tabIndex={2}
             >
               <X size={18} />
               Limpar filtros
@@ -313,7 +308,7 @@ export function TutorsSearch() {
       <div className="lg:col-span-2">
         {showResults && (
           <>
-            <h2 className="text-2xl font-bold text-gray-800 mb-6" tabIndex={2}>Resultados da busca:</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">Resultados da busca:</h2>
 
             {filteredTutors.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -327,7 +322,6 @@ export function TutorsSearch() {
                 <button
                   onClick={clearFilters}
                   className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
-                  tabIndex={2}
                 >
                   Limpar filtros
                 </button>
@@ -340,7 +334,6 @@ export function TutorsSearch() {
                 <button
                   onClick={handleShowAllTutors}
                   className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-3 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
-                  tabIndex={2}
                 >
                   Exibir todos os tutores
                 </button>

@@ -19,12 +19,11 @@ export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
           <li key={item.href} className="flex items-center">
             {index > 0 && <span className="mx-2 text-gray-400">|</span>}
             {item.active ? (
-              <span className="text-gray-800 font-medium" tabIndex={2}>{item.label}</span>
+              <span className="text-gray-800 font-medium">{item.label}</span>
             ) : (
               <Link
                 href={item.href}
                 className="text-cyan-800 hover:text-cyan-900 hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-1 rounded-sm"
-                tabIndex={2}
               >
                 {item.label}
               </Link>

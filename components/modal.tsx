@@ -58,7 +58,6 @@ export function Modal({ isOpen, onClose, title, children, className = "" }: Moda
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2 rounded-md"
             aria-label="Fechar modal"
-            tabIndex={2}
           >
             <X size={24} />
           </button>

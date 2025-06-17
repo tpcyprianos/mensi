@@ -12,7 +12,6 @@ export function RegisterHeader() {
             width={120}
             height={40}
             priority
-            tabIndex={1}
           />
         </Link>
       </div>

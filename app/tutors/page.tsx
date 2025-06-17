@@ -28,7 +28,7 @@ export default function TutorsPage() {
             className="mb-8"
           />
           {/* Título da página */}
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6" tabIndex={2}>Tutores</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Tutores</h1>
           {/* Componente de busca de tutores */}
           <TutorsSearch />
         </div>
