@@ -178,7 +178,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
               <div className="flex flex-col sm:flex-row gap-3 justify-end">
                 <button
                   onClick={handleCancelExternal}
-                  className="px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  className="px-6 py-2 bg-rose-800 hover:bg-rose-800 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                 >
                   Cancelar
                 </button>
