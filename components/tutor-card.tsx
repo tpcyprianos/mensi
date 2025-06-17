@@ -69,25 +69,24 @@ export function TutorCard({ tutor }: TutorCardProps) {
               width={96}
               height={96}
               className="object-cover"
+              tabIndex={2}
             />
           </div>
 
           {/* Nome do tutor */}
-          <h3 className="text-xl font-bold text-gray-800 mb-1">{tutor.name}</h3>
+          <h3 className="text-xl font-bold text-gray-800 mb-1" tabIndex={2}>{tutor.name}</h3>
 
           {/* Título e instituição (se não for IA) */}
-          {!tutor.isAI && tutor.title && tutor.institution && (
-            <p className="text-gray-700 mb-4">
-              {tutor.title} {tutor.institution}
-            </p>
-          )}
+          <p className="text-gray-700 mb-4" tabIndex={2}>
+            {tutor.title} {tutor.institution}
+          </p>
 
           {/* Disciplinas oferecidas */}
           <div className="w-full mt-2">
-            <p className="text-center font-medium mb-2">Oferece tutoria em:</p>
+            <p className="text-center font-medium mb-2" tabIndex={2}>Oferece tutoria em:</p>
             <div className="flex flex-wrap justify-center gap-2">
               {tutor.subjects.map((subject) => (
-                <span key={`${tutor.id}-${subject}`} className="bg-white text-gray-700 px-3 py-1 rounded-full text-sm">
+                <span key={`${tutor.id}-${subject}`} className="bg-white text-gray-700 px-3 py-1 rounded-full text-sm" tabIndex={2}>
                   {subject}
                 </span>
               ))}
@@ -95,7 +94,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
 
             {/* Disponibilidade (se houver) */}
             {tutor.availability && (
-              <span className="block text-center bg-white text-gray-700 px-3 py-1 rounded-full text-sm mx-auto mt-2 max-w-max">
+              <span className="block text-center bg-white text-gray-700 px-3 py-1 rounded-full text-sm mx-auto mt-2 max-w-max" tabIndex={tutor.availability ? 2 : -1}>
                 {tutor.availability}
               </span>
             )}
@@ -107,6 +106,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
               <button
                 onClick={handleButtonClick}
                 className="inline-flex items-center gap-2 bg-cyan-700 hover:bg-cyan-800 text-white px-8 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+                tabIndex={2}
               >
                 {buttonText}
                 <ExternalLink size={16} />
@@ -115,6 +115,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
               <Link
                 href={`/tutors/${tutor.id}`}
                 className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-8 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+                tabIndex={2}
               >
                 {buttonText}
               </Link>

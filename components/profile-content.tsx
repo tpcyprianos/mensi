@@ -152,7 +152,7 @@ export function ProfileContent() {
             )}
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-800">Adenilson, bem vindo!</h1>
+            <h1 className="text-2xl font-bold text-gray-800" tabIndex={2}>Adenilson, bem vindo!</h1>
             <Link
               href="/profile/avatar"
               className="text-cyan-800 hover:text-cyan-900 text-base focus:outline-none focus:underline"
@@ -212,10 +212,11 @@ export function ProfileContent() {
           onToggle={() => toggleSection("tutors")}
         >
           <div className="p-6">
-            <p className="text-gray-600 mb-4">Poxa! Por enquanto você ainda não tem nenhum tutor.</p>
+            <p className="text-gray-600 mb-4" tabIndex={expandedSections.tutors ? 2 : -1}>Poxa! Por enquanto você ainda não tem nenhum tutor.</p>
             <Link
               href="/tutors"
               className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+              tabIndex={expandedSections.tutors ? 2 : -1}
             >
               Encontre um tutor
             </Link>
@@ -229,10 +230,11 @@ export function ProfileContent() {
           onToggle={() => toggleSection("communities")}
         >
           <div className="p-6">
-            <p className="text-gray-600 mb-4">Você ainda não participa de nenhuma comunidade.</p>
+            <p className="text-gray-600 mb-4" tabIndex={expandedSections.communities ? 2 : -1}>Você ainda não participa de nenhuma comunidade.</p>
             <Link
               href="/community"
               className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+              tabIndex={expandedSections.communities ? 2 : -1}
             >
               Explorar comunidades
             </Link>

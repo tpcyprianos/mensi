@@ -175,13 +175,13 @@ export function RepositorySearch() {
       {/* Coluna de filtros */}
       <div className="lg:col-span-1">
         <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6" tabIndex={2}>
             Utilize os filtros abaixo para personalizar sua busca
           </h2>
 
           {/* Filtro por disciplina */}
           <div className="mb-6">
-            <label htmlFor="subject" className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="subject" className="block text-gray-700 font-medium mb-2" tabIndex={2}>
               Disciplina:
             </label>
             <div className="relative">
@@ -191,6 +191,7 @@ export function RepositorySearch() {
                 onChange={(e) => setSubject(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-cyan-700 bg-white"
                 aria-label="Selecione uma disciplina"
+                tabIndex={2}
               >
                 <option value="">Selecione uma disciplina</option>
                 {availableSubjects.map((subj) => (
@@ -213,7 +214,7 @@ export function RepositorySearch() {
 
           {/* Filtro por série */}
           <div className="mb-6">
-            <label htmlFor="grade" className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="grade" className="block text-gray-700 font-medium mb-2" tabIndex={2}>
               Série:
             </label>
             <div className="relative">
@@ -223,6 +224,7 @@ export function RepositorySearch() {
                 onChange={(e) => setGrade(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-cyan-700 bg-white"
                 aria-label="Selecione uma série"
+                tabIndex={2}
               >
                 <option value="">Selecione uma série</option>
                 {availableGrades.map((gr) => (
@@ -245,7 +247,7 @@ export function RepositorySearch() {
 
           {/* Filtro por conteúdo */}
           <div className="mb-6">
-            <label htmlFor="category" className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="category" className="block text-gray-700 font-medium mb-2" tabIndex={2}>
               Conteúdo:
             </label>
             <div className="relative">
@@ -255,6 +257,7 @@ export function RepositorySearch() {
                 onChange={(e) => setCategory(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-cyan-700 bg-white"
                 aria-label="Selecione um tipo de conteúdo"
+                tabIndex={2}
               >
                 <option value="">Selecione um conteúdo</option>
                 {availableCategories.map((cat) => (
@@ -280,6 +283,7 @@ export function RepositorySearch() {
             <button
               onClick={clearFilters}
               className="flex items-center gap-2 bg-rose-800 hover:bg-rose-900 text-white px-4 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-rose-800 focus:ring-offset-2"
+              tabIndex={2}
             >
               <X size={18} />
               Limpar filtros
@@ -292,7 +296,7 @@ export function RepositorySearch() {
       <div className="lg:col-span-2">
         {showResults && (
           <>
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Resultados da busca:</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-6" tabIndex={2}>Resultados da busca:</h2>
 
             {filteredContents.length > 0 ? (
               <div className="space-y-4">
@@ -314,7 +318,7 @@ export function RepositorySearch() {
 
             {/* Informação sobre total de resultados */}
             {filteredContents.length > 0 && (
-              <div className="mt-6 text-center text-gray-600">
+              <div className="mt-6 text-center text-gray-600" tabIndex={2}>
                 <p>
                   {filteredContents.length === 1
                     ? "1 conteúdo encontrado"
@@ -328,8 +332,8 @@ export function RepositorySearch() {
         {/* Mensagem inicial quando nenhum filtro foi aplicado */}
         {!showResults && (
           <div className="bg-white p-8 rounded-lg shadow-sm text-center">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Bem-vindo ao Repositório!</h2>
-            <p className="text-gray-600 mb-6">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4" tabIndex={2}>Bem-vindo ao Repositório!</h2>
+            <p className="text-gray-600 mb-6" tabIndex={2}>
               Use os filtros ao lado para encontrar materiais educativos organizados por disciplina, série e tipo de
               conteúdo.
             </p>
@@ -340,8 +344,8 @@ export function RepositorySearch() {
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span className="font-medium">Exercícios</span>
-                <span>Com respostas explicadas</span>
+                <span className="font-medium" tabIndex={2}>Exercícios</span>
+                <span tabIndex={2}>Com respostas explicadas</span>
               </div>
               <div className="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
                 <div className="w-12 h-12 bg-cyan-300 rounded-full flex items-center justify-center mb-2">
@@ -349,8 +353,8 @@ export function RepositorySearch() {
                     <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V4a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <span className="font-medium">Vídeos</span>
-                <span>Aulas explicativas</span>
+                <span className="font-medium" tabIndex={2}>Vídeos</span>
+                <span tabIndex={2}>Aulas explicativas</span>
               </div>
               <div className="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
                 <div className="w-12 h-12 bg-cyan-300 rounded-full flex items-center justify-center mb-2">
@@ -362,8 +366,8 @@ export function RepositorySearch() {
                     />
                   </svg>
                 </div>
-                <span className="font-medium">Artigos</span>
-                <span>Conteúdo teórico</span>
+                <span className="font-medium" tabIndex={2}>Artigos</span>
+                <span tabIndex={2}>Conteúdo teórico</span>
               </div>
             </div>
           </div>

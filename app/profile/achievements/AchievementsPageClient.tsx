@@ -29,12 +29,12 @@ export default function AchievementsPageClient() {
           />
 
           {/* Título da página */}
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Minhas Conquistas</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4" tabIndex={2}>Minhas Conquistas</h1>
 
           {/* Texto explicativo */}
           <div className="mb-8">
-            <p className="text-gray-700 mb-2">Cada medalha aqui mostra o quanto você tá evoluindo.</p>
-            <p className="text-gray-700">Estudou, ajudou, mandou bem? Ganha conquista! Bora colecionar vitórias!</p>
+            <p className="text-gray-700 mb-2" tabIndex={2}>Cada medalha aqui mostra o quanto você tá evoluindo.</p>
+            <p className="text-gray-700" tabIndex={2}>Estudou, ajudou, mandou bem? Ganha conquista! Bora colecionar vitórias!</p>
           </div>
 
           {/* Grid de conquistas */}
