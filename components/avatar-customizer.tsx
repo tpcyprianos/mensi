@@ -278,7 +278,7 @@ export function AvatarCustomizer() {
 
         {/* Preview do Avatar (opcional - para mostrar combinação) */}
         <div className="bg-white rounded-lg p-6 shadow-sm">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Preview do seu avatar:</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">Prévia do seu avatar:</h3>
           <div className="flex justify-center">
             <div className="relative">
               {/* Avatar base */}
