@@ -35,3 +35,9 @@ export default function NotFound() {
     </div>
   )
 }
+
+// Metadados para SEO
+export const metadata = {
+  title: "Meu Perfil | Mensi",
+  description: "Gerencie seu perfil, acesse seus tutores e materiais de estudo na plataforma Mensi.",
+}
