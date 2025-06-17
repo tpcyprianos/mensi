@@ -61,7 +61,7 @@ export function AchievementCard({ achievement, onClick }: AchievementCardProps) 
   }
 
   return (
-    <button
+    <a
       onClick={onClick}
       className={`
         relative w-full p-4 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2
@@ -118,6 +118,6 @@ export function AchievementCard({ achievement, onClick }: AchievementCardProps) 
           </div>
         </div>
       )}
-    </button>
+    </a>
   )
 }
