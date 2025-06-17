@@ -25,7 +25,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
   // Determinar o texto do botão com base no tipo de tutor
   const buttonText = tutor.isAI ? "Começar" : "Ver perfil"
 
-  // Determinar a URL de destino com base no tipo de tutor
+  // Determinar a URL de destino com base no tipo de tutor - vai para um chat no GPT
   const buttonHref = tutor.isAI ? "https://chatgpt.com/g/g-hRCqiqVlM-tutor-me" : `/tutors/${tutor.id}`
 
   return (
