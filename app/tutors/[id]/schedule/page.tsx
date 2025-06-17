@@ -80,7 +80,7 @@ export default function SchedulePage({ params, searchParams }: SchedulePageProps
               { label: "Perfil", href: "/profile" },
               { label: "Tutores", href: "/tutors" },
               { label: `Perfil Tutor - ${tutor.name}`, href: `/tutors/${tutor.id}` },
-              { label: "Agendamento Tutoria", href: `/tutors/${tutor.id}/schedule`, active: true },
+              { label: "Agendamento de Tutoria", href: `/tutors/${tutor.id}/schedule`, active: true },
             ]}
             className="mb-8"
           />

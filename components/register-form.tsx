@@ -219,8 +219,8 @@ export function RegisterForm() {
         <div className="bg-white rounded-lg shadow-lg p-8">
           {/* Título e instruções */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">Cadastro</h1>
-            <p className="text-gray-600">
+            <h1 className="text-3xl font-bold text-gray-800 mb-4" tabIndex={2}>Cadastro</h1>
+            <p className="text-gray-600" tabIndex={2}>
               Digite seus dados nos campos abaixo. Campos com <span className="text-red-500">*</span> são de
               preenchimento obrigatório.
             </p>
@@ -232,7 +232,7 @@ export function RegisterForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Nome completo */}
               <div className="flex flex-col">
-                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2" tabIndex={2}>
                   Nome completo <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -246,9 +246,10 @@ export function RegisterForm() {
                     errors.fullName ? "border-red-500" : "border-gray-300"
                   }`}
                   aria-describedby={errors.fullName ? "fullName-error" : undefined}
+                  tabIndex={2}
                 />
                 {errors.fullName && (
-                  <p id="fullName-error" className="mt-1 text-sm text-red-600" role="alert">
+                  <p id="fullName-error" className="mt-1 text-sm text-red-600" role="alert" tabIndex={errors.fullName ? 2 : -1}>
                     {errors.fullName}
                   </p>
                 )}
@@ -256,7 +257,7 @@ export function RegisterForm() {
 
               {/* Data de nascimento */}
               <div className="flex flex-col">
-                <label htmlFor="birthDate" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="birthDate" className="block text-sm font-medium text-gray-700 mb-2" tabIndex={2}>
                   Data de nascimento (dd/mm/aaaa) <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -271,9 +272,10 @@ export function RegisterForm() {
                     errors.birthDate ? "border-red-500" : "border-gray-300"
                   }`}
                   aria-describedby={errors.birthDate ? "birthDate-error" : undefined}
+                  tabIndex={2}
                 />
                 {errors.birthDate && (
-                  <p id="birthDate-error" className="mt-1 text-sm text-red-600" role="alert">
+                  <p id="birthDate-error" className="mt-1 text-sm text-red-600" role="alert" tabIndex={errors.birthDate ? 2 : -1}>
                     {errors.birthDate}
                   </p>
                 )}
@@ -283,8 +285,8 @@ export function RegisterForm() {
             {/* Segunda linha - E-mail e Senha */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* E-mail */}
-              <div className="flex flex-col">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <div className="flex-col">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2" tabIndex={2}>
                   E-mail <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -298,17 +300,18 @@ export function RegisterForm() {
                     errors.email ? "border-red-500" : "border-gray-300"
                   }`}
                   aria-describedby={errors.email ? "email-error" : undefined}
+                  tabIndex={2}
                 />
                 {errors.email && (
-                  <p id="email-error" className="mt-1 text-sm text-red-600" role="alert">
+                  <p id="email-error" className="mt-1 text-sm text-red-600" role="alert" tabIndex={errors.email ? 2 : -1}>
                     {errors.email}
                   </p>
                 )}
               </div>
 
               {/* Senha */}
-              <div className="flex flex-col">
-                <label htmlFor="password" className="flex items-center text-sm font-medium text-gray-700 mb-2">
+              <div className="flex-col">
+                <label htmlFor="password" className="flex items-center text-sm font-medium text-gray-700 mb-2" tabIndex={2}>
                   Senha <span className="text-red-500">*</span>
                   <div className="relative ml-2">
                    {/* <button
@@ -328,12 +331,13 @@ export function RegisterForm() {
                     <HelpCircle
                       size={16}
                       role="button"
-                      tabIndex={0}
+                      tabIndex={2}
                       onMouseEnter={() => setShowPasswordTooltip(true)}
                       onMouseLeave={() => setShowPasswordTooltip(false)}
                       onFocus={() => setShowPasswordTooltip(true)}
                       onBlur={() => setShowPasswordTooltip(false)}
                       className="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-800 rounded-full ml-1 align-text-top cursor-pointer"
+                      aria-label="Informações sobre requisitos da senha"
                     />
 
                     {/* Tooltip */}
@@ -366,6 +370,7 @@ export function RegisterForm() {
                       errors.password ? "border-red-500" : "border-gray-300"
                     }`}
                     aria-describedby={errors.password ? "password-error" : undefined}
+                    tabIndex={2}
                   />
                   <button
                     type="button"
@@ -377,7 +382,7 @@ export function RegisterForm() {
                   </button>
                 </div>
                 {errors.password && (
-                  <p id="password-error" className="mt-1 text-sm text-red-600" role="alert">
+                  <p id="password-error" className="mt-1 text-sm text-red-600" role="alert" tabIndex={errors.password ? 2 : -1}>
                     {errors.password}
                   </p>
                 )}
@@ -390,7 +395,7 @@ export function RegisterForm() {
               <div className="flex flex-col">
                 {!isAdult ? (
                   <>
-                    <label htmlFor="guardianEmail" className="flex items-center text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="guardianEmail" className="flex items-center text-sm font-medium text-gray-700 mb-2" tabIndex={!isAdult ? 2 : -1}>
                       E-mail do responsável <span className="text-red-500">*</span>
                       <div className="relative ml-2">
                         {/*<button
@@ -408,15 +413,16 @@ export function RegisterForm() {
                         */}
 
                         <HelpCircle
-                          size={16}
-                          role="button"
-                          tabIndex={0}
-                          onMouseEnter={() => setShowGuardianTooltip(true)}
-                          onMouseLeave={() => setShowGuardianTooltip(false)}
-                          onFocus={() => setShowGuardianTooltip(true)}
-                          onBlur={() => setShowGuardianTooltip(false)}
-                          className="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-800 rounded-full ml-1 align-text-top cursor-pointer"
-                        />
+                            size={16}
+                            role="button"
+                            tabIndex={2}
+                            onMouseEnter={() => setShowGuardianTooltip(true)}
+                            onMouseLeave={() => setShowGuardianTooltip(false)}
+                            onFocus={() => setShowGuardianTooltip(true)}
+                            onBlur={() => setShowGuardianTooltip(false)}
+                            className="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-800 rounded-full ml-1 align-text-top cursor-pointer"
+                            aria-label="Informações sobre e-mail do responsável"
+                         />
 
                         {/* Tooltip */}
                         {showGuardianTooltip && (
@@ -444,6 +450,7 @@ export function RegisterForm() {
                         errors.guardianEmail ? "border-red-500" : "border-gray-300"
                       }`}
                       aria-describedby={errors.guardianEmail ? "guardianEmail-error" : undefined}
+                      tabIndex={!isAdult ? 2 : -1}
                     />
                     {errors.guardianEmail && (
                       <p id="guardianEmail-error" className="mt-1 text-sm text-red-600" role="alert">
@@ -455,7 +462,7 @@ export function RegisterForm() {
                   <>
                     <div className="h-6 mb-2"></div> {/* Espaço para manter alinhamento do label */}
                     <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center justify-center min-h-[52px]">
-                      <p className="text-green-800 text-sm text-center">
+                      <p className="text-green-800 text-sm text-center" tabIndex={isAdult ? 2 : -1}>
                         ✓ Como você é maior de idade, não é necessário informar o e-mail de um responsável.
                       </p>
                     </div>
@@ -465,7 +472,7 @@ export function RegisterForm() {
 
               {/* Confirmação de senha */}
               <div className="flex flex-col">
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2" tabIndex={2}>
                   Confirmação da senha <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
@@ -480,6 +487,7 @@ export function RegisterForm() {
                       errors.confirmPassword ? "border-red-500" : "border-gray-300"
                     }`}
                     aria-describedby={errors.confirmPassword ? "confirmPassword-error" : undefined}
+                    tabIndex={2}
                   />
                   <button
                     type="button"
@@ -504,17 +512,19 @@ export function RegisterForm() {
                 type="submit"
                 disabled={isLoading}
                 className="w-full max-w-xs bg-cyan-700 hover:bg-cyan-800 disabled:bg-cyan-500 text-white py-3 px-8 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+                tabIndex={2}
               >
                 {isLoading ? "Cadastrando..." : "Cadastrar"}
               </button>
             </div>
 
             {/* Link para login */}
-            <div className="text-center">
+            <div className="text-center" tabIndex={2}>
               <span className="text-gray-600">Já possui uma conta? </span>
               <Link
                 href="/login"
                 className="text-cyan-800 hover:text-cyan-900 font-medium focus:outline-none focus:underline"
+                tabIndex={2}
               >
                 Entre
               </Link>

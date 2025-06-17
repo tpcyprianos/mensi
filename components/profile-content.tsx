@@ -134,7 +134,6 @@ export function ProfileContent() {
                 width={64}
                 height={64}
                 className="w-full h-full object-cover"
-                tabIndex={2}
               />
             </div>
             {/* Complemento sobreposto */}
@@ -212,10 +211,11 @@ export function ProfileContent() {
           onToggle={() => toggleSection("tutors")}
         >
           <div className="p-6">
-            <p className="text-gray-600 mb-4">Poxa! Por enquanto você ainda não tem nenhum tutor.</p>
+            <p className="text-gray-600 mb-4" tabIndex={expandedSections.tutors ? 2 : -1}>Poxa! Por enquanto você ainda não tem nenhum tutor.</p>
             <Link
               href="/tutors"
               className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+              tabIndex={expandedSections.tutors ? 2 : -1}
             >
               Encontre um tutor
             </Link>
@@ -229,10 +229,11 @@ export function ProfileContent() {
           onToggle={() => toggleSection("communities")}
         >
           <div className="p-6">
-            <p className="text-gray-600 mb-4">Você ainda não participa de nenhuma comunidade.</p>
+            <p className="text-gray-600 mb-4" tabIndex={expandedSections.communities ? 2 : -1}>Você ainda não participa de nenhuma comunidade.</p>
             <Link
               href="/community"
               className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+              tabIndex={expandedSections.communities ? 2 : -1}
             >
               Explorar comunidades
             </Link>
@@ -246,10 +247,11 @@ export function ProfileContent() {
           onToggle={() => toggleSection("materials")}
         >
           <div className="p-6">
-            <p className="text-gray-600 mb-4">Nenhum material foi visualizado recentemente.</p>
+            <p className="text-gray-600 mb-4" tabIndex={expandedSections.materials ? 2 : -1}>Nenhum material foi visualizado recentemente.</p>
             <Link
               href="/repository"
               className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+              tabIndex={expandedSections.materials ? 2 : -1}
             >
               Explorar repositório
             </Link>

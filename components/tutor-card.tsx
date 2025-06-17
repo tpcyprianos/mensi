@@ -69,25 +69,26 @@ export function TutorCard({ tutor }: TutorCardProps) {
               width={96}
               height={96}
               className="object-cover"
+              tabIndex={2}
             />
           </div>
 
           {/* Nome do tutor */}
-          <h3 className="text-xl font-bold text-gray-800 mb-1">{tutor.name}</h3>
+          <h3 className="text-xl font-bold text-gray-800 mb-1" tabIndex={2}>{tutor.name}</h3>
 
           {/* Título e instituição (se não for IA) */}
           {tutor.title && tutor.institution && (
-            <p className="text-gray-700 mb-4">
+            <p className="text-gray-700 mb-4" tabIndex={2}>
               {tutor.title} {tutor.institution}
             </p>
           )}
 
           {/* Disciplinas oferecidas */}
           <div className="w-full mt-2">
-            <p className="text-center font-medium mb-2">Oferece tutoria em:</p>
+            <p className="text-center font-medium mb-2" tabIndex={2}>Oferece tutoria em:</p>
             <div className="flex flex-wrap justify-center gap-2">
               {tutor.subjects.map((subject) => (
-                <span key={`${tutor.id}-${subject}`} className="bg-white text-gray-700 px-3 py-1 rounded-full text-sm">
+                <span key={`${tutor.id}-${subject}`} className="bg-white text-gray-700 px-3 py-1 rounded-full text-sm" tabIndex={2}>
                   {subject}
                 </span>
               ))}
@@ -95,7 +96,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
 
             {/* Disponibilidade (se houver) */}
             {tutor.availability && (
-              <span className="block text-center bg-white text-gray-700 px-3 py-1 rounded-full text-sm mx-auto mt-2 max-w-max">
+              <span className="block text-center bg-white text-gray-700 px-3 py-1 rounded-full text-sm mx-auto mt-2 max-w-max" tabIndex={2}>
                 {tutor.availability}
               </span>
             )}
@@ -107,6 +108,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
               <button
                 onClick={handleButtonClick}
                 className="inline-flex items-center gap-2 bg-cyan-700 hover:bg-cyan-800 text-white px-8 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+                tabIndex={2}
               >
                 {buttonText}
                 <ExternalLink size={16} />
@@ -115,6 +117,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
               <Link
                 href={`/tutors/${tutor.id}`}
                 className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-8 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+                tabIndex={2}
               >
                 {buttonText}
               </Link>
@@ -145,6 +148,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
                 onClick={handleCancelExternal}
                 className="text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2 rounded-md"
                 aria-label="Fechar modal"
+                tabIndex={showExternalModal ? 3 : -1}
               >
                 <X size={24} />
               </button>
@@ -157,10 +161,10 @@ export function TutorCard({ tutor }: TutorCardProps) {
                   <ExternalLink size={24} className="text-orange-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-gray-800 mb-2">
+                  <h3 className="text-lg font-medium text-gray-800 mb-2" tabIndex={showExternalModal ? 2 : -1}>
                     Você será redirecionado para fora da plataforma Mensi
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-600 text-sm" tabIndex={showExternalModal ? 2 : -1}>
                     O {tutor.name} é um tutor de IA externo. Ao continuar, você será direcionado para uma nova aba no
                     ChatGPT para interagir com nosso assistente especializado em educação.
                   </p>
@@ -168,7 +172,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
               </div>
 
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
-                <p className="text-amber-800 text-sm">
+                <p className="text-amber-800 text-sm" tabIndex={showExternalModal ? 2 : -1}>
                   <strong>Importante:</strong> Você continuará tendo acesso à plataforma Mensi nesta aba. O tutor IA
                   abrirá em uma nova janela.
                 </p>
@@ -179,12 +183,14 @@ export function TutorCard({ tutor }: TutorCardProps) {
                 <button
                   onClick={handleCancelExternal}
                   className="px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  tabIndex={showExternalModal ? 2 : -1}
                 >
                   Cancelar
                 </button>
                 <button
                   onClick={handleConfirmExternal}
                   className="px-6 py-2 bg-cyan-700 hover:bg-cyan-800 text-white rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2 flex items-center gap-2"
+                  tabIndex={showExternalModal ? 2 : -1}
                 >
                   Continuar
                   <ExternalLink size={16} />

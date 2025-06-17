@@ -125,26 +125,27 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
                     height={128}
                     className="w-full h-full object-cover"
                     priority
+                    tabIndex={2}
                   />
                 </div>
               </div>
 
               {/* Nome e título */}
               <div className="flex-grow">
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">{tutor.name}</h1>
-                <p className="text-xl text-gray-700 mb-4">{tutor.title}</p>
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2" tabIndex={2}>{tutor.name}</h1>
+                <p className="text-xl text-gray-700 mb-4" tabIndex={2}>{tutor.title}</p>
 
                 {/* Bio (se disponível) */}
-                {tutor.bio && <p className="text-gray-700 leading-relaxed">{tutor.bio}</p>}
+                {tutor.bio && <p className="text-gray-700 leading-relaxed" tabIndex={tutor.bio ? 2 : -1}>{tutor.bio}</p>}
               </div>
             </div>
 
             {/* Seção: Oferece tutoria em */}
             <div className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">Oferece tutoria em:</h2>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4" tabIndex={2}>Oferece tutoria em:</h2>
               <div className="flex flex-wrap gap-3">
                 {tutor.subjects.map((subject) => (
-                  <span key={subject} className="bg-white text-gray-700 px-4 py-2 rounded-full font-medium shadow-sm">
+                  <span key={subject} className="bg-white text-gray-700 px-4 py-2 rounded-full font-medium shadow-sm" tabIndex={2}>
                     {subject}
                   </span>
                 ))}
@@ -153,14 +154,14 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
 
             {/* Seção: Especialidades */}
             <div className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">Especialidades:</h2>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4" tabIndex={2}>Especialidades:</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {tutor.specialties.map((specialty, index) => (
                   <div key={index} className="bg-sky-100 rounded-lg p-4">
                     <h3 className="font-semibold text-gray-800 mb-2 sr-only">{specialty.category}</h3>
                     <ul className="space-y-1">
                       {specialty.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="text-gray-700 text-sm flex items-start">
+                        <li key={itemIndex} className="text-gray-700 text-sm flex items-start" tabIndex={2}>
                           <span className="text-cyan-800 mr-2">•</span>
                           {item}
                         </li>
@@ -181,12 +182,12 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
               {/* Calendário */}
               <div className="bg-white rounded-lg p-6 mb-6 shadow-sm">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-800">{calendarData.monthName}</h3>
+                  <h3 className="text-lg font-semibold text-gray-800" tabIndex={2}>{calendarData.monthName}</h3>
                   <div className="flex gap-2">
-                    <button className="p-2 hover:bg-gray-100 rounded-md" aria-label="Mês anterior">
+                    <button className="p-2 hover:bg-gray-100 rounded-md" aria-label="Mês anterior" tabIndex={2}>
                       <ChevronLeft size={16} />
                     </button>
-                    <button className="p-2 hover:bg-gray-100 rounded-md" aria-label="Próximo mês">
+                    <button className="p-2 hover:bg-gray-100 rounded-md" aria-label="Próximo mês" tabIndex={2}>
                       <ChevronRight size={16} />
                     </button>
                   </div>
@@ -195,7 +196,7 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
                 {/* Cabeçalho dos dias da semana */}
                 <div className="grid grid-cols-7 gap-1 mb-2">
                   {["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"].map((day) => (
-                    <div key={day} className="p-2 text-center text-sm font-medium text-gray-500">
+                    <div key={day} className="p-2 text-center text-sm font-medium text-gray-500" tabIndex={2}>
                       {day}
                     </div>
                   ))}
@@ -217,7 +218,7 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
                         disabled={isDisabled}
                         className={`
                           p-2 text-sm rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-cyan-700
-                          ${isDisabled ? "text-gray-300 cursor-not-allowed" : "hover:bg-cyan-200 cursor-pointer"}
+                          ${isDisabled ? "text-gray-300 cursor-not-allowed" : "hover:bg-cyan-200 hover:text-black cursor-pointer"}
                           ${
                             isSelected
                               ? "bg-cyan-700 text-white"
@@ -228,6 +229,7 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
                                   : "text-gray-300"
                           }
                         `}
+                        tabIndex={2}
                       >
                         {date.getDate()}
                       </button>
@@ -236,15 +238,15 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
                 </div>
 
                 <div className="mt-4 text-sm text-gray-500">
-                  <p>• Disponível de segunda a sexta-feira</p>
-                  <p>• Selecione uma data para ver os horários disponíveis</p>
+                  <p tabIndex={2}>• Disponível de segunda a sexta-feira</p>
+                  <p tabIndex={2}>• Selecione uma data para ver os horários disponíveis</p>
                 </div>
               </div>
 
               {/* Horários disponíveis - só aparecem após selecionar uma data */}
               {selectedDate && (
                 <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4" tabIndex={selectedDate ? 2 : -1}>
                     Horários disponíveis para {selectedDate}:
                   </h3>
                   <div className="flex flex-wrap gap-3">
@@ -258,6 +260,7 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
                             : "bg-cyan-700 hover:bg-cyan-800 text-white"
                         }`}
                         aria-label={`Agendar sessão às ${time} do dia ${selectedDate}`}
+                        tabIndex={selectedDate ? 2 : -1}
                       >
                         <Clock size={16} className="inline mr-2" />
                         {time}
@@ -268,10 +271,10 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
                   {/* Feedback visual quando um horário é selecionado */}
                   {selectedTime && (
                     <div className="mt-4 p-4 bg-green-100 border border-green-300 rounded-lg">
-                      <p className="text-green-800 font-medium">
+                      <p className="text-green-800 font-medium" tabIndex={selectedTime ? 2 : -1}>
                         ✓ Horário selecionado: {selectedTime} do dia {selectedDate}
                       </p>
-                      <p className="text-green-700 text-sm mt-1">
+                      <p className="text-green-700 text-sm mt-1" tabIndex={selectedTime ? 2 : -1}>
                         Clique em "Enviar mensagem" para confirmar o agendamento com {tutor.name}.
                       </p>
                     </div>
@@ -288,6 +291,7 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
                 onClick={handleSendMessage}
                 className="w-full lg:w-auto bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2 flex items-center justify-center gap-2"
                 aria-label={`Enviar mensagem para ${tutor.name}`}
+                tabIndex={2}
               >
                 <MessageSquare size={20} />
                 Enviar mensagem
@@ -295,12 +299,12 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
 
               {/* Informações adicionais (podem ser expandidas no futuro) */}
               <div className="mt-6 bg-white rounded-lg p-4 shadow-sm">
-                <h3 className="font-semibold text-gray-800 mb-2">Informações adicionais</h3>
+                <h3 className="font-semibold text-gray-800 mb-2" tabIndex={2}>Informações adicionais</h3>
                 <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Resposta rápida</li>
-                  <li>• Aulas personalizadas</li>
-                  <li>• Material didático incluso</li>
-                  <li>• Suporte contínuo</li>
+                  <li tabIndex={2}>• Resposta rápida</li>
+                  <li tabIndex={2}>• Aulas personalizadas</li>
+                  <li tabIndex={2}>• Material didático incluso</li>
+                  <li tabIndex={2}>• Suporte contínuo</li>
                 </ul>
               </div>
             </div>
