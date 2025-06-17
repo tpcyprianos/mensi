@@ -12,6 +12,10 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+body a{
+  cursor: pointer;
+}
+
 /* Estilos para alto contraste */
 body.high-contrast {
   background-color: #000000 !important;
@@ -50,6 +54,7 @@ body.high-contrast a {
   color: #ffff00 !important;
   border-color: #ffff00 !important;
   text-decoration: none !important;
+  cursor: pointer;
 }
 
 body.high-contrast .mt-6 a{

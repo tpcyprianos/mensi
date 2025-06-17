@@ -186,21 +186,21 @@ export function ProfileContent() {
 
       {/* Controles para expandir/recolher todos os painéis */}
       <div className="flex justify-center items-center gap-4 mb-6 text-base">
-        <button
+        <a
           onClick={expandAllSections}
           className="text-cyan-800 hover:text-cyan-900 focus:outline-none focus:underline"
           tabIndex={2}
         >
           Abrir todos os painéis
-        </button>
+        </a>
         <span className="text-gray-400 select-none">|</span>
-        <button
+        <a
           onClick={collapseAllSections}
           className="text-cyan-800 hover:text-cyan-900 focus:outline-none focus:underline"
           tabIndex={2}
         >
           Ocultar todos os painéis
-        </button>
+        </a>
       </div>
 
       {/* Seções expansíveis */}
