@@ -317,10 +317,11 @@ export function TutorsSearch() {
               </div>
             ) : (
               <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-                <p className="text-gray-600 mb-4">Nenhum tutor encontrado com os filtros selecionados.</p>
+                <p className="text-gray-600 mb-4" tabIndex={2}>Nenhum tutor encontrado com os filtros selecionados.</p>
                 <button
                   onClick={clearFilters}
                   className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+                  tabIndex={2}
                 >
                   Limpar filtros
                 </button>
@@ -333,6 +334,7 @@ export function TutorsSearch() {
                 <button
                   onClick={handleShowAllTutors}
                   className="inline-block bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-3 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-offset-2"
+                  tabIndex={2}
                 >
                   Exibir todos os tutores
                 </button>
