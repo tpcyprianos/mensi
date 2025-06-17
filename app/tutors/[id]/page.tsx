@@ -167,6 +167,6 @@ export default function TutorPage({ params }: TutorPageProps) {
       {/*<AccessibilityButton />*/}
     </main>
   )
-}<
+}
 
 // Remove metadata export since we're using "use client"
