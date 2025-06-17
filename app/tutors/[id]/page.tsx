@@ -138,7 +138,7 @@ export default function TutorPage({ params }: TutorPageProps) {
   return (
     <main className="min-h-screen flex flex-col">
       {/* Menu de acessibilidade - mesmo das outras páginas */}
-      <AccessibilityMenu />
+      {/*<AccessibilityMenu />*/}
 
       {/* Header da página com navegação */}
       <ProfileHeader activeItem="tutores" />
@@ -167,6 +167,6 @@ export default function TutorPage({ params }: TutorPageProps) {
       {/*<AccessibilityButton />*/}
     </main>
   )
-}
+}<
 
 // Remove metadata export since we're using "use client"

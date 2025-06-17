@@ -1,5 +1,3 @@
-"use client"
-
 import { AccessibilityMenu } from "@/components/accessibility-menu"
 import { ProfileHeader } from "@/components/profile-header"
 import { ScheduleForm } from "@/components/schedule-form"
@@ -100,3 +98,8 @@ export default function SchedulePage({ params, searchParams }: SchedulePageProps
 }
 
 // Remove metadata export since we're using "use client"
+// Metadados para SEO
+export const metadata = {
+  title: "Meu Perfil | Mensi",
+  description: "Gerencie seu perfil, acesse seus tutores e materiais de estudo na plataforma Mensi.",
+}
