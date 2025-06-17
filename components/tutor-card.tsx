@@ -76,7 +76,7 @@ export function TutorCard({ tutor }: TutorCardProps) {
           <h3 className="text-xl font-bold text-gray-800 mb-1">{tutor.name}</h3>
 
           {/* Título e instituição (se não for IA) */}
-          {!tutor.isAI && tutor.title && tutor.institution && (
+          {tutor.title && tutor.institution && (
             <p className="text-gray-700 mb-4">
               {tutor.title} {tutor.institution}
             </p>
