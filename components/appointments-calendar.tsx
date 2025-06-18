@@ -257,7 +257,7 @@ export function AppointmentsCalendar() {
                       <button
                         onClick={() => openAppointmentDetails(appointment)}
                         className={`
-                          w-auto text-left p-1 rounded text-xs text-white font-medium
+                          w-full text-left p-1 rounded text-xs text-white font-medium
                           ${getEventColor(appointment.status)}
                           hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500
                         `}
