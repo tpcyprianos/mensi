@@ -68,7 +68,7 @@ export function AchievementCard({ achievement, onClick }: AchievementCardProps) 
         ${
           achievement.isUnlocked
             ? `${getCategoryColor()} hover:scale-105 shadow-sm hover:shadow-md`
-            : "bg-gray-400 opacity-60 hover:opacity-80"
+            : "bg-gray-200 hover:opacity-80"
         }
       `}
       aria-label={`${achievement.title}: ${achievement.description}`}
@@ -105,7 +105,7 @@ export function AchievementCard({ achievement, onClick }: AchievementCardProps) 
       {/* Barra de progresso para conquistas bloqueadas */}
       {!achievement.isUnlocked && achievement.progress && (
         <div className="mt-2">
-          <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="w-full bg-gray-400 rounded-full h-2">
             <div
               className="bg-cyan-700 h-2 rounded-full transition-all duration-300"
               style={{
