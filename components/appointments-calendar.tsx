@@ -189,7 +189,7 @@ export function AppointmentsCalendar() {
     today.getMonth() === currentDate.getMonth() && today.getFullYear() === currentDate.getFullYear()
 
   return (
-    <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+    <div className="bg-white rounded-lg overflow-hidden">
       {/* Cabeçalho do calendário com navegação */}
       <div className="bg-amber-300 p-4 flex items-center justify-between">
         <button
@@ -235,8 +235,8 @@ export function AppointmentsCalendar() {
               <div
                 key={index}
                 className={`
-                  relative min-h-[60px] p-1 border border-gray-100
-                  ${isEmpty ? "bg-gray-50" : "bg-white hover:bg-gray-50"}
+                  relative min-h-[60px] p-1 border border-gray-300
+                  ${isEmpty ? "bg-gray-100" : "bg-white hover:bg-gray-100"}
                 `}
               >
                 {day && (

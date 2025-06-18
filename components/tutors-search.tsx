@@ -214,7 +214,7 @@ export function TutorsSearch() {
                 value={tutorName}
                 onChange={(e) => setTutorName(e.target.value)}
                 placeholder="Digite o nome do tutor"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-700"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-700 placeholder-black"
                 tabIndex={2}
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
