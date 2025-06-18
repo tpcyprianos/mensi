@@ -186,15 +186,15 @@ export function ScheduleForm({ tutor, selectedDate, selectedTime }: ScheduleForm
               onChange={handleMessageChange}
               placeholder="Ex.: Minha maior dificuldade é a realização da multiplicação de fração."
               rows={8}
-              className={`w-full p-4 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${
-                messageError ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-cyan-700"
+              className={`w-full p-4 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:border-transparent transition-colors placeholder-gray-500 ${
+                messageError ? "border-red-500 focus:ring-red-500" : "border-gray-600 focus:ring-cyan-700"
               }`}
               aria-describedby="message-help"
               required
               tabIndex={2}
             />
             {messageError && <p className="mt-1 text-sm text-red-600">{messageError}</p>}
-            <p id="message-help" className="mt-2 text-sm text-gray-500" tabIndex={2}>
+            <p id="message-help" className="mt-2 text-base text-gray-700" tabIndex={2}>
               Descreva suas dificuldades para que a tutora possa se preparar melhor para a sessão.
             </p>
           </div>

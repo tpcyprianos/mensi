@@ -237,7 +237,7 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
                   })}
                 </div>
 
-                <div className="mt-4 text-sm text-gray-500">
+                <div className="mt-4 text-base text-gray-700">
                   <p tabIndex={2}>• Disponível de segunda a sexta-feira</p>
                   <p tabIndex={2}>• Selecione uma data para ver os horários disponíveis</p>
                 </div>
