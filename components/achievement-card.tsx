@@ -68,7 +68,7 @@ export function AchievementCard({ achievement, onClick }: AchievementCardProps) 
         ${
           achievement.isUnlocked
             ? `${getCategoryColor()} hover:scale-105 shadow-sm hover:shadow-md`
-            : "bg-gray-100 opacity-60 hover:opacity-80"
+            : "bg-gray-400 opacity-60 hover:opacity-80"
         }
       `}
       aria-label={`${achievement.title}: ${achievement.description}`}
@@ -88,9 +88,7 @@ export function AchievementCard({ achievement, onClick }: AchievementCardProps) 
 
       {/* Título da conquista */}
       <h3
-        className={`
-        font-semibold text-sm text-center mb-1
-        ${achievement.isUnlocked ? "text-gray-800" : "text-gray-500"}
+        className={`font-semibold text-sm text-center mb-1 ${achievement.isUnlocked ? "text-black" : "text-black"}
       `}
         tabIndex={2}
       >
@@ -115,7 +113,7 @@ export function AchievementCard({ achievement, onClick }: AchievementCardProps) 
               }}
             />
           </div>
-          <div className="text-xs text-gray-500 mt-1 text-center">
+          <div className="text-xs text-black mt-1 text-center">
             {achievement.progress.current}/{achievement.progress.total}
           </div>
         </div>
