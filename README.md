@@ -14,7 +14,7 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/mariabernardes23s-projects/v0-mensi-plataforma-uc](https://vercel.com/mariabernardes23s-projects/v0-mensi-plataforma-uc)**
+**[https://v0-mensi-plataforma-fo.vercel.app/](https://v0-mensi-plataforma-fo.vercel.app/)**
 
 ## Build your app
 
