@@ -19,7 +19,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     <html lang="pt-BR" className="scroll-smooth">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-        <VLibras forceOnload />
+        <VLibras tabIndex={1} forceOnload />
           {children}
           {/* Botão de acessibilidade flutuante global */}
         </ThemeProvider>
