@@ -235,7 +235,7 @@ export function AppointmentsCalendar() {
               <div
                 key={index}
                 className={`
-                  relative min-h-[60px] p-1 border border-gray-300
+                  relative min-h-[60px] p-1 border border-gray-400
                   ${isEmpty ? "bg-gray-100" : "bg-white hover:bg-gray-100"}
                 `}
               >
