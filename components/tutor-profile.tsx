@@ -41,7 +41,7 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
   // Função para gerar dados do calendário
   const generateCalendarData = () => {
     // Data fixa para Junho de 2025
-    const currentMonth = 5 // Junho (0-indexed)
+    const currentMonth = 6 // Junho (0-indexed)
     const currentYear = 2025
 
     const firstDay = new Date(currentYear, currentMonth, 1)
@@ -59,7 +59,7 @@ export function TutorProfile({ tutor }: TutorProfileProps) {
 
     return {
       days,
-      monthName: "Junho de 2025",
+      monthName: "Julho de 2025",
       currentMonth,
       currentYear,
     }
